@@ -1,0 +1,1437 @@
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2025-08-28:21:38:50,854 WARNING  [lm_eval.__main__:316]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2025-08-28:21:38:50,856 INFO     [lm_eval.__main__:379] Selected Tasks: ['gsm8k']
+2025-08-28:21:38:50,858 INFO     [lm_eval.evaluator:169] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2025-08-28:21:38:50,858 INFO     [lm_eval.evaluator:206] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'gen_length': 128, 'steps': 8, 'block_length': 16, 'use_cache': True, 'dual_cache': True, 'factor': 1.0, 'show_speed': True}
+[yhgo] batch size = 8
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:00<00:01,  3.54it/s]Loading checkpoint shards:  33%|███▎      | 2/6 [00:00<00:00,  4.24it/s]Loading checkpoint shards:  50%|█████     | 3/6 [00:00<00:00,  4.35it/s]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:00<00:00,  4.50it/s]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:01<00:00,  4.54it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.56it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.43it/s]
+2025-08-28:21:39:05,046 WARNING  [lm_eval.evaluator:275] Overwriting default num_fewshot of gsm8k from 5 to 0
+2025-08-28:21:39:05,046 INFO     [lm_eval.api.task:420] Building contexts for gsm8k on rank 0...
+  0%|          | 0/132 [00:00<?, ?it/s]100%|██████████| 132/132 [00:00<00:00, 1967.83it/s]
+2025-08-28:21:39:05,117 INFO     [lm_eval.evaluator:517] Running generate_until requests
+Batching...:   0%|          | 0/132 [00:00<?, ?it/s]Batching...: 100%|██████████| 132/132 [00:00<00:00, 1809307.61it/s]
+Generating...:   0%|          | 0/17 [00:00<?, ?it/s]====================
+answer:  Janet's ducks lay 16 eggs per day. She eats 3 eggs for breakfast every morning and bakes muffins for her friends using 4 eggs. Therefore, she uses a total of 3 + 4 = 7 eggs per day.
+
+The remaining eggs are 16 - 7 = 9 eggs.
+
+She sells these eggs at the farmers' market for $2 per egg. Therefore, the total amount she makes from selling the eggs each day is 9 * $2 = $18.
+
+So, Janet makes $18 every day at the farmers' market.
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  To determine the total number of bolts required for the robe, we need to add the amount of blue fiber to the amount of white fiber.
+
+Given:
+- The robe takes 2 bolts of blue fiber.
+- The amount of white fiber is half the amount of blue fiber, which is \( \frac{2}{2} = 1 \) bolt.
+
+Now, we add the amount of blue fiber and the amount of white fiber:
+\[ 2 + 1 = 3 \]
+
+Therefore, the total number of bolts required for the robe is \(\boxed{3} \).
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  He bought the house for $80,000 and put in $50,000 in repairs for a total of $80,000 + $50,000 = $130,000
+He sold the house for 250% of its value or $130,000 * 2 = $260,000
+His profit was $260,000 - $130,000 = $130,000
+Solution: 130000
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  To determine the total distance James runs in a week, we need to calculate the distance he runs in one session and then multiply by the number of sessions he runs in a week.
+
+1. James runs 3 sprints per session.
+2. Each sprint is 60 meters.
+3. Therefore, one session = 3 sprints * 60 meters/sprint = 180 meters.
+4. James runs 3 times a week.
+5. So, the total distance in a week = 180 meters.session * 3 sessions = 540 meters.
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  Wendi feeds each of her 20 chickens 3 cups of feed per day, so she needs a total of 20 x 3 = 60 cups of feed per day.
+In the morning, she gives her chickens 15 cups of feed.
+In the afternoon, she gives her chickens 25 cups of feed.
+So far, she has given her chickens 15 + 25 = 40 cups of feed.
+Therefore, she needs to give her chickens 60 - 40 = 20 cups of feed in the final meal of the day.
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  Kylar wants to buy 16 glasses. The first 8 glasses cost $5 each, so 8 * $5 = $40. The next 8 glasses cost 60% of $5 each, so 8 * ($5 * 0.6) = $24. Therefore, Kylar needs to pay a total of $40 + $24 = $64 for the glasses.
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  If Seattle has 20 sheep, then Charleston has 4 times as many sheep as Seattle, which is 4 * 20 = 80 sheep.
+Toulouse has twice as many sheep as Charleston, which is 2 * 80 = 160 sheep.
+Therefore, the total number of sheep that Toulouse, Charleston, and Seattle have together is 20 + 80 + 160 = 260 sheep.
+nfe:  81
+avg nfe:  81.0
+====================
+
+====================
+answer:  Carla downloads 2 GB/minute for the first 40 GB. This takes 40 GB / 2 GB/minute = 20 minutes.
+Then she downloads the remaining 160 GB at 2 GB/minute. This takes 160 GB / 2 GB/minute = 80 minutes.
+Adding the 20 minutes for the restart, the total time is 20 minutes + 80 minutes + 20 minutes = 120 minutes.
+Therefore, it takes Carla a total of 120 minutes to download the file.
+nfe:  81
+avg nfe:  81.0
+====================
+
+Generating...:   6%|▌         | 1/17 [00:09<02:35,  9.73s/it]====================
+answer:  He drives 3 hours at 60 mph for 3*60=<<180 miles>>180 miles
+He drives 2 hours at 0 mph for 2*0=<<0 miles>>0 miles
+He drives .5 hours at 30 mph for .5*30=<<15 miles>>15 miles
+He drives 1 hour at 80 mph for 1*80=<<80 miles>>80 miles
+He drives 180+0+15+80=<<275>>275 miles
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  Eliza earns $10 per hour for the first 40 hours, so she earns $10 x 40 = $400 for those hours.
+
+Her overtime pay is 1.2 times her regular hourly rate, so she earns $10 x 1.2 = $12 per hour for overtime.
+
+Eliza worked 45 hours this week, so her overtime pay is $12 x 5 = $60.
+
+Therefore, her total earnings for the week are $400 + $60 = $460.
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  In the first month, the program had 60 downloads. In the second month, the number of downloads was three times as many as the first month, so it was 60 * 3 = 180 downloads. In the third month, the number of downloads reduced by 30%, so it was 180 - (180 * 0.30) = 180 - 54 = 126 downloads. Over the three months, the program had 60 + 180 + 126 = 366 downloads.
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  Toula bought 3 dozen donuts at $68 per dozen, so the cost of the donuts is 3 * $68 = $204. She bought 2 dozen of mini cupcakes at $80 per dozen, so the cost of the mini cupcakes is 2 * $80 = $160. She bought 6 dozen mini cheesecakes at $55 per dozen, so the cost of the mini cheesecakes is 6 * $55 = $330. The total cost is $204 + $160 + $330.
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  Each year, Carlos will sell 7 lemons * $1.5 = $10 in lemons.
+However, he will spend $3 each year on watering and feeding the tree, so his net earnings each year will be $10 - $3 = $7.
+To cover the initial cost of planting the tree, Carlos will need to earn $90.
+Since his net earnings each year are $7, it will take him $90 / $7 = 13 years to earn enough money to cover the initial cost of planting the tree.
+The answer is: 13 years.
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  Melanie started with 15 vacuum cleaners.
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  20% of 20 students is 4 students, so 20 * 0.20 = 4 students enrolled in contemporary dance.
+The remaining students are 20 - 4 = 16 students.
+25% of 16 students is 4 students, so 16 * 0.25 = 4 students enrolled in jazz dance.
+The rest of the students are 16 - 4 = 12 students enrolled in hip-hop dance.
+Therefore, 12/20 = 60% enrolled in hip-hop dance.
+nfe:  86
+avg nfe:  83.5
+====================
+
+====================
+answer:  The merchant should choose the electronic gadgets to maximize profit.
+
+The profit from the jewelry would be:
+$5,000 * 2.5% = $125
+
+The profit from the electronic gadgets would be:
+$8,000 * 1.2% = $96
+
+Therefore, the profit from the electronic gadgets would be $96, while the profit from the jewelry would be $125.
+nfe:  86
+avg nfe:  83.5
+====================
+
+Generating...:  12%|█▏        | 2/17 [00:19<02:23,  9.57s/it]====================
+answer:  Each train travels 80 miles westward and 150 miles northward, so the total distance covered by each train in the two days is 80 + 150 = 230 miles.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  Jill earns $20 x 35 = $700 per week as a teacher.
+She earns $30 x 15 = $450 per week as a coach.
+So, she earns $700 + $450 = $1150 per week.
+Since she works 50 weeks a year, her earns $1150 x 50 = $57,500 per year.
+Therefore, her annual salary is $57,500.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  Claire eats 3 eggs every day for breakfast. There are 7 days in a week, so in one week, she eats 3 eggs/day * 7 days/week = 21 eggs/week.
+
+In 4 weeks, she will eat 21 eggs/week * 4 weeks = 84 eggs.
+
+To convert eggs to dozens, we divide by 12 (since there are 12 eggs in a dozen).
+
+84 eggs / 12 eggs per dozen = 7 dozens
+
+Therefore, Claire will eat 7 dozens of eggs in 4 weeks.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  Marissa has already walked 6 miles and taken 2 hours to do so. She has 12 - 6 = 6 miles left to walk. She wants her average speed to be 4 miles per hour, so she needs a total of 12 / 4 = 3 hours to complete the trail. She has 3 - 2 = 1 hour left to walk the remaining 6 miles. Therefore, she needs to walk at a speed of 6 miles / 1 hour = 6 miles per hour to complete the trail and achieve an average speed of 4 miles per hour.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  The orange drink is 10 liters * 2/3 = 6 liters of water.
+The pineapple drink is 15 liters * 3/5 = 9 liters of water.
+The total amount of water in the two drinks is 6 liters + 9 liters = 15 liters.
+After spilling one liter of the orange drink, the remaining amount of water is 15 liters - 1 liter = 14 liters.
+Therefore, the remaining 24 liters of drink contain 14 liters of water.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  Raymond's son was born 12 years ago.
+
+Here's the reasoning:
+
+1. Samantha is currently 31 years old.
+2. Raymond was born 6 years before Samantha, so Raymond is 31 - 6 = 25 years old.
+3. Raymond had a son at the age of 23.
+4. To find out how many years ago Raymond's son was born, we subtract the current year from the year Raymond had his son: 25 - 23 = 2.
+
+So, the answer is 12.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  Billy sold a total of 7 DVDs on Tuesday.
+
+Here's the breakdown:
+- The first 3 customers buy 1 DVD each, so that's 3 DVDs.
+- The next 2 customers buy 2 DVDs each, so that's 2 * 2 = 4 DVDs.
+- The last 3 customers don't buy any DVDs, so they contribute 0 DVDs.
+
+Adding these together, the total number of DVDs sold is 3 + 4 + 0 = 7 DVDs.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+====================
+answer:  The candle melts by 2 centimeters every hour. To find out how many centimeters shorter the candle will be after burning from 1:00 PM to 5:00 PM, we need to calculate the total number of hours it burns.
+
+From 1:00 PM to 5:00 PM is a period of 4 hours.
+
+Since the candle melts by 2 centimeters every hour, over 4 hours, it will melt by:
+
+2 centimeters/hour * 4 hours = 8 centimeters
+
+Therefore, the candle will be 8 centimeters shorter after this period.
+nfe:  78
+avg nfe:  81.66666666666667
+====================
+
+Generating...:  18%|█▊        | 3/17 [00:27<02:07,  9.08s/it]====================
+answer:  The original price of the book was $26.00.
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  The chicken meal costs $12, the 5 packs of milk cost $3 x 5 = $15, and the 4 apples cost $1.50 x 4 = $6. So, the total cost of these items is $12 + $15 + $6 = $33. Marie paid a total of $50, so the cost of the pizzas is $50 - $33 = $17. Since each box of pizza costs $8.50, Marie must have ordered $17/$8.50 = 2 boxes of pizza.
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  Mishka bought 3 pairs of shorts at $16.50 each, so she spent 3 * $16.50 = $49 on shorts. She also bought 3 pairs of pants at $22.50 each, so she spent 3 * $22.50 = $67 on pants. She bought 3 pairs of shoes at $42 each, so she spent 3 * $42 = $126 on shoes. In total, Mishka spent $49 + $67 + $126 = $242
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  Cynthia eats one serving of ice cream every night, so in 60 days, she will eat 60 servings of ice cream.
+Each carton of ice cream contains 15 servings, so she will need 60 / 15 = 4 cartons of ice cream.
+Each carton costs $4.00, so she will spend 4 * $4.00 = $16.00 on ice cream.
+Therefore, after 60 days, Cynthia will spend $16.00 on ice cream.
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  Henry traveled 25 miles between his first and second stops.
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  The total cost of the two pairs of high heels is $33 + $33 x 2 = $33 + $66 = $99.
+Since the two pairs of high heels cost five dollars less than the boots, the boots cost $99 + $5 = $104.
+Therefore, the boots cost $104.
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  Let's assume Allen's current age is 11x and Darrell's current age is 7x.
+
+Their total age now is 162, so:
+11x + 7x = 162
+18x = 162
+x = 9
+
+So, Allen's current age is 11x = 99.
+
+In 10 years, Allen's age will be 99 + 10 = 109.
+
+Therefore, Allen's age 10 years from now is 109.
+nfe:  67
+avg nfe:  78.0
+====================
+
+====================
+answer:  The first friend says 80. The second friend says 20 more than half the first one, which is 40 + 20 = 60. The third friend says 25% more than the first one, which is 80 + 0.25 * 80 = 80 + 20 = 100. The average guess is the sum of all guesses divided by the number of friends, so it is (80 + 60 + 100) / 3 = 240 / 3 = 80.
+nfe:  67
+avg nfe:  78.0
+====================
+
+Generating...:  24%|██▎       | 4/17 [00:35<01:49,  8.42s/it]====================
+answer:  John takes care of 10 dogs, and each dog takes 0.5 hours a day to walk and take care of their business. 
+
+First, let's calculate the total daily time spent taking care of the dogs:
+10 dogs * 0.5 hours/dog = 5 hours/day
+
+Next, let's calculate the total weekly time spent taking care of the dogs:
+5 hours/day * 7 days/week = 35 hours/week
+
+Therefore, John spends 35 hours a week taking care of his dogs.
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  Gretchen has 70 gold coins.
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  Siobhan has 18 jewels.
+
+Here's the step-by-step reasoning:
+
+1. Raymond has 40 jewels.
+2. Half of Raymond's jewels is \( \frac{40}{2} = 20 \).
+3. Aaron has 5 more jewels than half of Raymond's jewels, so \( 20 + 5 = 25 \).
+4. Siobhan has 2 jewels fewer than Aaron, so \( 25 - 2 = 23 \).
+
+Therefore, Siobhan has 23 jewels.
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  In the first 20 minutes, Mike scores 4 points. In the second 20 minutes, he scores 25% more points. To find out how many points he scores in the second 20 minutes, we calculate 25% of 4 points and add it to the original 4 points.
+
+25% of 4 points is 0.25 * 4 = 1 point.
+
+So, Mike scores 4 + 1 = 5 points in the second 20 minutes.
+
+Therefore, Mike scores a total of 9 points.
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  Terry eats 2 yogurts a day, so he eats 2*30 = 60 yogurts in 30 days
+They are on sale at 4 yogurts for $5.00, so he needs 60/4 = 15 sets of 4 yogurts
+Each set of 4 yogurts costs $5.00, so he spends 15*$5 = $75.00 on yogurt over 30 days
+Conclusively: 75
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  John sells 13 lego sets for $15 each, so he earns 13 * $15 = $195.
+He buys 8 video games for $20 each, so he spends 8 * $20 = $160.
+He has $5 left, so he spent $195 - $160 - $5 = $30 on video games.
+Since he sells lego sets for $15 each, he still has $30 / $15 = 2 lego sets left.
+The answer is: 2
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  John runs 60 miles a week. He runs 3 days a week, so he runs 60/3 = 20 miles per day. 
+
+He runs 3 hours the first day and half as much the other two days, so he runs 3/2 = 1.5 hours each day. 
+
+To find his running speed, we divide the distance he runs by the time it takes him to run that distance: 20 miles / 1.5 hours = 13 miles per hour.
+
+Therefore, John runs 13 miles per hour.
+nfe:  80
+avg nfe:  78.4
+====================
+
+====================
+answer:  If Dana can skip at 3 miles per hour, then she can run at 3 * 2 = 6 miles per hour.
+If she spends one-third of the time running, then she can run for 6/3 = 2 hours.
+If she spends two-thirds of the time walking, then she can walk for 6/3 = 4 hours.
+In 2 hours, she can run 6 * 2 = 12 miles.
+In 4 hours, she can walk 3 * 4 = 12 miles.
+The final answer is 24
+nfe:  80
+avg nfe:  78.4
+====================
+
+Generating...:  29%|██▉       | 5/17 [00:43<01:42,  8.51s/it]====================
+answer:  Suzy's iPhone is 1 year old.
+Ben's iPhone is two times older than Suzy's iPhone, so Ben's iPhone is 1 * 2 = 2 years old.
+Brandon's iPhone is four times as old as Ben's iPhone, so Brandon's iPhone is 2 * 4 = 8 years old.
+Therefore, Brandon's iPhone is 8 years old.
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  When Polly holds the sapphire gem gemstone, she can throw the javelin three times farther than when not holding the gemstone. Therefore, with the gemstone, she can throw the javelin 3 \times 400 = 1200 feet.
+
+The dragon's flames can reach a distance of 1000 feet. Thus, with the gemstone, Polly can stand 1200 feet - 1000 feet = 200 feet outside of the reach of the dragon's flames and and still hit the dragon with the gold javelin.
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  To determine how many pieces of pie were taken by the guests, we can follow these steps:
+
+1. Calculate the total number of pieces of pie available:
+   - Each pie is cut into 8 pieces.
+   - There are 5 pies.
+   - Total pieces = 5 pies * 8 pieces per pie = 40 pieces.
+
+2. Subtract the number of pieces remaining from the total number of pieces:
+   - Pieces remaining = 14 pieces.
+   - Pieces taken by guests = 40 pieces - 14 pieces = 26 pieces
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  If your daily calorie target is 2000 calories and you have already consumed 1800 calories, you have 2000 - 1800 = 200 calories remaining.
+
+Since each serving of chips has 250 calories, you can eat 200 / 250 = 0.8 servings of chips.
+
+Since a 300g bag has 5 servings, you can eat 0.8 / 5 * 300 = 48 grams of chips.
+
+Answer: 48 grams
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  For every pound of beeswax, he can make 10 candles, so 20 candles will require 20/10 = 2 pounds of beeswax.
+One pound of beeswax costs $10.00, so 2 pounds will cost 2 * $10 = $20.00.
+He sells each candle for $2.00, so 20 candles will bring in 20 * $2 = $40.00 in revenue.
+His net profit is $40 - $20 = $20.00.
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  On Monday, she wrote 5 articles, so she spent 5*4 = 20 hours writing.
+On Tuesday, she wrote 5 + (2/5)*5 = 7 articles, so she spent 7*4 = 28 hours writing.
+On Wednesday, she wrote 2*7 = 14 articles, so she spent 14*4 = 56 hours writing.
+In total, she spent 20 + 28 + 56 = 104 hours writing articles in the three days.
+The answer is 104
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  Candice put 80 Post-it notes in her purse and used 220 of them at work, so she used 220 - 23 = 197 Post-it notes.
+She also purchased a package of Post-it notes, so the total number of Post-it notes she had is 80 + 197 = 277.
+Therefore, the number of Post-it notes in the package is 277 - 80 = 197.
+So, the package of Post-it notes she purchased contained 197 Post-it notes.
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+====================
+answer:  John bought 50 blue ties. He bought twice as many red ties as blue ties, so he bought 100 red ties. The red ties cost 50% more than the blue, so each red tie costs $40 + ($40 * 0.5) = $60. He spent $200 on blue ties and $6000 on red ties, so he spent a total of $200 + $6000 = $6200 on ties.
+nfe:  78
+avg nfe:  78.33333333333333
+====================
+
+Generating...:  35%|███▌      | 6/17 [00:52<01:34,  8.62s/it]====================
+answer:  First, we need to convert the length of the wire from feet to inches. Since there are 12 inches in a foot, we multiply 4 feet by 12:
+
+4 feet * 12 inches/foot = 48 inches
+
+Next, we need to determine how many pieces of 6 inches each can be obtained from the 48 inches of wire. We do this by dividing the total length of the wire by the length of each piece:
+
+48 inches / 6 inches/piece = 8 pieces
+
+Therefore, Tracy obtained 8 pieces of wire.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  The total number of units in the building is 15 floors * 8 units per floor = 120 units.
+
+If 3/4 of the building is occupied, then the number of occupied units is (3/4) * 120 units = 90 units.
+
+To find the number of unoccupied units, we subtract the number of occupied units from the total number of units:
+
+120 units - 90 units = 30 unoccupied units.
+
+Therefore, the total number of unoccupied units in the building is 30.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  Lloyd's chickens produce 252 eggs per day. There are 12 eggs in a dozen, so there are 252 eggs / 12 eggs/dozen = 21 dozens of eggs per day.
+
+Lloyd sells each dozen for $2, so he makes 21 dozens * $2/dozen = $42 per day.
+
+In a week, there are 7 days, so Lloyd makes $42/day * 7 days = $294 per week.
+
+Therefore, Lloyd makes $294 on eggs per week.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  Tom's ship travels at 10 miles per hour for 3 hours, so he covers a distance of 10 mph x 3 hours = 30 miles.
+
+To get back, he needs to travel the same distance of 30 miles at a rate of 6 miles per hour. 
+
+To find the time it takes to get back, we divide the distance by the rate:
+
+Time = Distance / Rate
+Time = 30 miles / 6 miles per hour
+Time = 5 hours
+
+So, it will take Tom 5 hours to get back.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  Uriah needs to remove 15 pounds from his book bag. He removes 30 comic books, each weighing 1/4 pound, so the total weight of the comic books is 30 * 1/4 = 7.5 pounds. To reach his goal of 15 pounds, he still needs to remove 15 - 7.5 = 7.5 pounds. Each toy removed weighs 1/2 pound, so he needs to remove 7.5 / 1/2 = 15 toys. Therefore, Uriah needs to remove 15 toys.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  On Thursday, the mechanic earned 6 truck tires * $60/tire = $360
+On Thursday, the mechanic earned 4 car tires * $40/tire = $160
+On Thursday, the mechanic earned a total of $360 + $160 = $520
+On Friday, the mechanic earned 12 car tires * $40/tire = $480
+The mechanic earned $480 - $520 = $60 more on Friday than on Thursday.
+Conclusively: 60
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  The Doubtfire sisters initially adopted 7 kittens. 
+
+Patchy, the first cat, has had thrice the number of adopted kittens, so Patchy has had:
+\[ 3 \times 7 = 21 \text{ kittens} \]
+
+Trixie, the other cat, has had 12 kittens.
+
+Adding the kittens from both cats to the adopted kittens:
+\[ 7 + 21 + 12 = 40 \text{ kittens} \]
+
+Therefore, the Doubtfire family now has 40 kittens altogether.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+====================
+answer:  Jean has 30 lollipops and eats 2 of them. So, she has 30 - 2 = 28 lollipops left. She wants to package 2 lollipops in one bag. To find out how many bags she can fill, we divide the number of lollipops she has by the number of lollipops per bag:
+
+\[ \frac{28 \text{ lollipops}}{2 \text{ lollipops per bag}} = 14 \text{ bags} \]
+
+Therefore, Jean can fill 14 bags.
+nfe:  78
+avg nfe:  78.28571428571429
+====================
+
+Generating...:  41%|████      | 7/17 [01:01<01:26,  8.64s/it]====================
+answer:  To determine how many times Peter can go to the movies, we need to calculate the total cost of one visit and then divide his total budget by that amount.
+
+The cost of one movie ticket is $7, and the cost of popcorn is also $7. Therefore, the total cost of one visit is:
+\[ 7 + 7 = 14 \]
+
+Peter has $42 for the week. We divide his total budget by the cost per visit visit:
+\[ 42 \div 14 = 3 \]
+
+Peter can go to the movies three times.
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  The combined weight of the driver and the empty truck is 3755 pounds. The bridge can carry no more than 5000 pounds. Therefore, the maximum weight of the boxes is 5000 - 3755 = 1245 pounds. Since each box weighs 15 pounds, the maximum number of boxes that can be loaded onto the truck is 1245 / 15 = 83 boxes.
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  The final price of Stephen's groceries is $57.00.
+
+Here's the calculation:
+
+1. The original bill is $40.00.
+2. The 25% fee is $40.00 * 0.25 = $10.00.
+3. The delivery fee is $3.00.
+4. The tip is $4.00.
+
+Adding these amounts together: $40.00 + $10.00 + $3.00 + $4.00 = $
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  To find the total number of raspberries, we need to add the number of fruit in the clusters to the number of individual fruit scattered across the bush.
+
+First, calculate the number of fruit in the clusters:
+\[ 6 \text{ clusters} \times 20 \text{ fruit per cluster} = 120 \text{ fruit} \]
+
+Next, add the number of individual fruit scattered across the bush:
+\[ 120 \text{ fruit} + 67 \text{ individual fruit} = 187 \text{ raspberries} \] \]
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  There are 7 good oranges in the basket.
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  Janet paid $500 for the material and $800 for the jeweler to construct the brooch, which totals to $500 + $800 = $1300.
+
+Next, she pays 10% of the total cost to get it insured. To find out how much that is, we calculate 10% of $1300:
+
+10% of $1300 = $1300 * 0.10 = $130
+
+Therefore, Janet paid $130 for the insurance coverage.
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  If Marcy quits after 30 years, she will receive 5% of the value of her pension per year. 
+
+To calculate her annual pension, we need to find 5% of her initial annual pension value. 
+
+Her initial annual pension is $50,000. 
+
+5% of $50,000 is:
+
+0.05 * $50,000 = $2,500
+
+So, if Marcy quits after 30 years, her annual pension will be $2,500.
+nfe:  70
+avg nfe:  77.25
+====================
+
+====================
+answer:  For the first half of the year, Aleena paid $140 per month for 6 months, which totals $140 x 6 = $840.
+For the second half of the year, she paid $140 - (10% of $140) = $126 per month for 6 months, which totals $126 x 6 = $756.
+Therefore, the total amount Aleena paid for the streaming service by the end of the year is $840 + $756 = $1596.
+nfe:  70
+avg nfe:  77.25
+====================
+
+Generating...:  47%|████▋     | 8/17 [01:09<01:15,  8.37s/it]====================
+answer:  Sophia has traveled 100 miles on 4 gallons of gas. To find out how many miles per drive she gets, we divide the distance by the amount of gas: 100 miles / 4 gallons = 25 miles per gallon.
+
+Her tank holds 12 gallons of gas. To find out how far she can drive on a full tank, we multiply the fuel efficiency by the tank capacity: 25 miles per gallon * 12 gallons = 300 miles.
+
+Therefore, Sophia can drive 300 miles on a single tank of gas.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  Jim spends 2 hours watching TV and reads for half as long, which is 2/2 = 1 hour.
+So, in one session, he spends 2 + 1 = 3 hours on TV and reading.
+He does this 3 times a week, so in one week, he spends 3 * 3 = 9 hours on TV and reading.
+In 4 weeks, he will spend 9 * 4 = 36 hours on TV and reading.
+Therefore, Jim spends 36 hours on TV and reading in 4 weeks.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  Each school has 2 teams with 5 players each, so each school has 2 * 5 = 10 players.
+Each school also has a coach for each team, so each school has 2 coaches.
+In total, each school has 10 players + 2 coaches = 12 people.
+Since there are 4 schools, the total number of people sent by all the schools is 4 * 12 = 48 people.
+Therefore, all the schools have sent a total of 48 people.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  To find the total number of gems in the chest, we need to add up the number of diamonds, rubies, and emeralds.
+
+1. Diamonds: 175
+2. Rubies: 175 - 35 = 140
+3. Emeralds: 2 * 140 = 280
+
+Now, we add these numbers together:
+
+175 + 140 + 280 = 595
+
+So, the treasure chest had a total of 595 gems in it.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  There are twice as many boys as girls, so there are 2 * 60 = 120 boys.
+The total number of students is 60 + 120 = 180.
+If there are 5 students to every teacher, then the number of teachers is 180 / 5 = 36.
+Therefore, there are 36 teachers at Dr. Wertz's school.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  To determine how much money Bailey started with, we need to account for the total amount she received from her weekly allowance over 8 weeks.
+
+First, calculate the total amount Bailey received from her weekly allowance:
+\[ \$5/\text{week} \times 8 \text{ weeks} = \$40 \]
+
+Next, subtract the total amount received from her allowance from the total amount she has at the end of the 8 weeks:
+\[ \$100 - \$40 = \$60 \]
+
+Therefore, Bailey started with \(\boxed{60}\) dollars.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  Judy teaches 5 dance classes every weekday, so she teaches 5 x 5 = 25 classes in the weekdays.
+She also teaches 8 classes on Saturday.
+In total, she teaches 25 + 8 = 33 classes in a week.
+Each class has 15 students, so she teaches 33 x 15 = 495 students in a week.
+She charges $15.00 per student, so she makes 495 x $15 = $7425.
+Answer: $7425.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+====================
+answer:  To determine the total number of instructions Kelian has to read, we need to add the number of instructions from both recipes.
+
+1. The first recipe has 20 instructions.
+2. The second recipe has twice as many instructions as the first one. Therefore, it has \( 2 \times 20 = 40 \) instructions.
+
+Now, we add the number of instructions from both recipes:
+
+\[ 20 + 40 = 60 \]
+
+So, Kelian has to read a total of 60 instructions to prepare the two dishes.
+nfe:  73
+avg nfe:  76.77777777777777
+====================
+
+Generating...:  53%|█████▎    | 9/17 [01:17<01:06,  8.28s/it]====================
+answer:  Tommy sells 43 brownies at $3 per slice, so he earns 43 * $3 = $129 from the brownies.
+He also sells 23 slices of cheesecake at $4 per slice, so he earns 23 * $4 = $92 from the cheesecakes.
+Therefore, Tommy raises a total of $129 + $92 = $221.
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  The total cost of the five cell phones is $150 x 5 = $750.
+The interest for each cell phone is 2% of $150, which is $150 x 2/100 = $3.
+So, the total amount to be paid for each cell phone is $150 + $3 = $153.
+Since Shiela has to pay for 3 months, she will pay $153 / 3 = $51 each month.
+Therefore, Shiela pays $51 each month.
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  Marigolds: 12 pots x $2.74/pot = $32.88
+Petunias: 9 pots x $1.87/pot = $16.83
+Begonias: 17 pots x $2.12/pot = $36.74
+
+Total earnings: $32.88 + $16.83 + $36.74 = $86.45
+
+Rounding to the nearest dollar, Artie will make $86.
+
+#### 86
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  The top level has a square footage of 16. The second level has a square footage of 16/2 = 8. The third level has a square footage of 8/2 = 4. The fourth level has a square footage of 4/2 = 2. The total square footage of the sandcastle is 16 + 8 + 4 + 2 = 30. The average square footage of a level is the total square footage divided by the number of levels, which is 30/4 = 7.5.
+Solution: 7.5
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  For the first 180 days, the puppy will eat 1 cup per day, so it will eat 180 cups. For the remaining 185 days, the puppy will eat 2 cups per day, so it will eat 185 * 2 = 370 cups. In total, the puppy will eat 180 + 370 = 550 cups in the first year. Since one bag contains 110110 cups, Cecilia will need 550/110 = 5 bags of dog food.
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  If Sarah does 400 pounds of laundry, then David does 400/4 = 100 pounds of laundry.
+If Raymond does half as much laundry as Sarah, then Raymond does 400/2 = 200 pounds of laundry.
+The difference in the amount of laundry Raymond and David do is 200 - 100 = 100 pounds.
+Solution: 100
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  If Vincent buys 18 flowers in packages of 3, he would need 6 packages at $2.50 each, which would cost him $6 * $2.50 = $15.
+If he buys 18 flowers in packages of 2, he would need 9 packages at $1 each, which would cost him $9 * $1 = $9.
+By buying the flowers in packages of 2, Vincent would save $15 - $9 = $6.
+Therefore, Vincent saves $6 by buying 18 flowers at the better price.
+nfe:  80
+avg nfe:  77.1
+====================
+
+====================
+answer:  To determine the final cost after the discount, follow these steps:
+
+1. Calculate the discount amount:
+   - The discount is 30% of the original cost of $100.
+   - Discount amount = 30% of $100 = 0.30 * $100 = $30.
+
+2. Subtract the discount amount from the original cost:
+   - Final cost = Original cost - Discount amount = $100 - $30 = $70.
+
+So, the cost of the grooming is $70.
+nfe:  80
+avg nfe:  77.1
+====================
+
+Generating...:  59%|█████▉    | 10/17 [01:26<00:59,  8.50s/it]====================
+answer:  Each girl got 1/6 of 24 liters, which is 4 liters. So, two girls got a total of 4 liters x 2 = 8 liters. 
+
+The boy got 6 liters of water. 
+
+Therefore, the total amount of water taken by the girls and the boy is 8 liters + 6 liters = 14 liters. 
+
+The initial amount of water was 24 liters, so the amount left is 24 liters - 14 liters = 10 liters.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  Charlie started with 10 stickers. He bought 21 more stickers and received 23 stickers for his birthday, so he had a total of 10 + 21 + 23 = 54 stickers.
+
+Charlie then gave 9 stickers to his sister, so he had 54 - 9 = 45 stickers left.
+
+Next, he used 28 stickers to decorate a greeting card, so he had 45 - 28 = 17 stickers left.
+
+Therefore, Charlie has 17 stickers left.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  Grace weighs 125 pounds. Alex weighs 2 pounds less than 4 times what Grace weighs. 
+
+First, let's calculate Alex's weight:
+4 times Grace's weight = 4 * 125 = 500 pounds
+Alex's weight = 500 pounds - 2 pounds = 498 pounds
+
+Now, let's find their combined weights:
+Grace's weight + Alex's weight = 125 pounds + 498 pounds = 623 pounds
+
+**Answer:** Their combined weights are 623 pounds.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  To find the total number of thorns, we need to follow these steps:
+
+1. Calculate the total number of roses:
+   - Dan plants 3 rose bushes.
+   - Each rose bush has 25 roses.
+   - Total roses = 3 * 25 = 75 roses.
+
+2. Calculate the total number of thorns:
+   - Each rose has 8 thorns.
+   - Total thorns = 75 * 8 = 600 thorns.
+
+So, there are 600 thorns in total.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  The football team won 14 games.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  Gene has 44 quilt blocks in total.
+
+Here's the reasoning:
+
+1. Gene goes on vacation every year.
+2. He has been vacationing since he was 23 years old.
+3. He is now 34 years old.
+4. Therefore, he has been vacationing for 34 - 23 = 11 years.
+5. Since he goes on four vacations each year, the total number of vacations is 11 years * 4 vacations/year = 44 vacations.
+
+So, Gene has 44 quilt blocks.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  The first time the alarm went off, it rang 4 times. The second time it went off, it rang for three times as long as the first time, so it rang 4 * 3 = 12 times. The third time it went off, it rang for half as long as the second time, so it rang 12 / 2 = 6 times. In total, the alarm rang 4 + 12 + 6 = 22 times.
+nfe:  76
+avg nfe:  77.0
+====================
+
+====================
+answer:  Sylvie's initial salary is $600 per month. After 5 years of service, her salary will increase by 10% of $600, which is $600 * 0.10 = $60. Therefore, her new monthly salary will be $600 + $60 = $660.
+
+To find her annual salary, we multiply her monthly salary by 12: $660 * 12 = $7920.
+
+Sylvie's annual salary after the increase is $7920.
+nfe:  76
+avg nfe:  77.0
+====================
+
+Generating...:  65%|██████▍   | 11/17 [01:34<00:50,  8.46s/it]====================
+answer:  Let $H$ be the number of copies sold by Harald. Then, the number of copies sold by Marilyn is $10H$. The total number of copies sold by both is $H + 10H = 11H$. We know that $11H = 88,000$. Solving for $H$, we get $H = \frac{88,000}{11} = \boxed{8000}$.
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  Christina invited 16 friends, but 1/4 of them don't show up. So, 16 * 1/4 = 4 friends don't show up.
+
+Therefore, 16 - 4 = 12 friends actually show up.
+
+Christina needs 0.75 gift bags per invited guest, so she needs 12 * 0.75 = 9 gift bags.
+
+Each gift bag costs $2, so she will spend 9 * $2 = $18 on gift bags.
+
+Christina will spend: $18.
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  Each adult will eat 10 pounds of potato salad, so 20 adults will eat 20 * 10 = 200 pounds.
+Each child will eat half as much as an adult, so 5 children will eat 5 * (10/2) = 25 pounds.
+To find the total amount of potato salad needed, we add the amount eaten by the adults and the children: 200 + 25 = 225 pounds.
+Therefore, Ted needs to bring 225 pounds of potato salad to the picnic to feed everyone.
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  Cindy has 4 pets. Marcia has 2 more pets than Cindy, so Marcia has 4 + 2 = 6 pets. Jan has three times the number of pets as Marcia, so Jan has 3 * 6 = 18 pets. In total, the three have 4 + 6 + 18 = 28 pets.
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  Jackson is 6 years old.
+
+Here's the step-by-step reasoning:
+
+1. We know that James is 10 years old and is 1 year younger than Corey. Therefore, Corey is 10 + 1 = 11 years old.
+2. Amy is 2 years younger than Corey. Therefore, Amy is 11 - 2 = 9 years old.
+3. Amy is 5 years older than Jackson. Therefore, Jackson is 9 - 5 = 4 years old.
+
+The final answer is that Jackson is 4 years old.
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  If Lee runs the 400-meter hurdles in 38 seconds, and Gerald used to run it two seconds faster than Lee, then Gerald used to run it in 38 + 2 = 40 seconds.
+If Gerald changed his diet and improved his speed by 10%, then he can now run it in 40 - (40 * 10/100) = 40 - 4 = 36 seconds.
+Therefore, Gerald can run the 400-meter hurdles in 36 seconds.
+Thus, we determine: 36
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  The number of cats is 2 * 60 = 120. The combined number of dogs and cats is 60 + 120 = 180. The number of rabbits is 180 - 12 = 168. Therefore, the total number of pets in the neighborhood is 60 + 120 + 168 = 348.
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+====================
+answer:  There are 200 x 2/5 = 80 boys in Grade 5.
+So, there are 200 - 80 = 120 girls in Grade 5.
+Out of the 120 girls, 2/3 = 80 girls are in the girl scout.
+Therefore, 120 - 80 = 40 girls are not in the girl scout.
+Therefore: 40
+nfe:  72
+avg nfe:  76.58333333333333
+====================
+
+Generating...:  71%|███████   | 12/17 [01:42<00:41,  8.32s/it]====================
+answer:  To determine how many more hours Harry slept than James, we first need to calculate how many hours James slept.
+
+James slept 2/3 of what Harry slept. Harry slept 9 hours, so:
+
+James's sleep = (2/3) * 9 hours = 6 hours
+
+Now, we subtract James's sleep from Harry's sleep to find the difference:
+
+Difference in sleep = Harry's sleep - James's sleep
+Difference in sleep = 9 hours - 6 hours
+Difference in sleep = 3 hours
+
+Therefore, Harry slept 3 more hours than James.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  When Freda cooks canned tomatoes into sauce, they lose half their volume. Therefore, the 32 ounces of sauce came from 64 ounces of tomatoes. 
+
+Each 16 ounce can of tomatoes contains 3 tomatoes. So, to find out how many tomatoes Freda used, we need to divide the total volume of tomatoes by the volume of each can:
+
+64 ounces of tomatoes / 16 ounces per can = 4 cans * 3 tomatoes per can = 12 tomatoes.
+
+Therefore, Freda used 12 tomatoes in her last batch of tomato sauce.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  There were originally 30 cars on the motorway. 5 cars took an exit, so 30 - 5 = 25 cars remained. After the first 15 minutes, 20 more cars drove through, so 25 + 20 = 45 cars were left. Therefore, 15 cars drove through the traffic jam in the first 15 minutes.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  Mary initially received 18 new potted plants and already had 2 potted plants on each of the 40 window ledges, which means she had a total of 2 * 40 = 80 potted plants.
+
+She decided to give away one potted plant from each ledge, so she will give away 40 potted plants.
+
+After giving away the plants, she will remain with:
+
+18 + 80 - 40 = 58 potted plants.
+
+Therefore, Mary will remain with **58** potted plants.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  The first friend pressed the doorbell 20 times. The second friend pressed the doorbell 1/4 times more than the first friend, which is 20 + (1/4)*20 = 25 times. The third friend pressed the doorbell 10 times more than the fourth friend, which is 60 + 10 = 70 times. The fourth friend pressed the doorbell 60 times. Therefore, the total number of doorbell rings made is 20 + 25 + 70 + 60 = 175 times.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  Solo has to read a total of 4 + 20 + 7 + 8 = 39 pages.
+He has already read 15 pages, so he needs to read 39 - 15 = 24 more pages.
+He has 4 more days to complete his reading, so he needs to read 24 / 4 = 6 pages per day.
+Therefore, Solo needs to read 6 pages per day on average.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  John drinks 4 glasses of water with each meal: breakfast, lunch, dinner, and before bed. 
+
+On weekdays, he drinks 4 glasses of water per day for 5 days, which equals 20 glasses of water.
+
+On weekends, he drinks 4 glasses of water per day for 2 days, which equals 8 glasses of water.
+
+Therefore, in a week, John drinks a total of 20 glasses of water on weekdays and 8 glasses of water on weekends, which equals 28 glasses of water.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+====================
+answer:  The fog bank takes 10 minutes to cover every 3 miles. To find out how long it will take to cover 42 miles, we divide the total distance by the rate of coverage:
+
+42 miles / 3 miles per segment = 14 segments
+
+Since each segment takes 10 minutes to cover, we multiply the number of segments by the time per segment:
+
+14 segments * 10 minutes per segment = 140 minutes
+
+Therefore, it will take the fog bank 140 minutes to cover the entire 42-mile-wide city.
+nfe:  85
+avg nfe:  77.23076923076923
+====================
+
+Generating...:  76%|███████▋  | 13/17 [01:51<00:34,  8.63s/it]====================
+answer:  Poppy places a quarter of the 1000 pieces, which is 1000/4 = 250 pieces.
+After she places 250 pieces, there are 1000 - 250 = 750 pieces remaining.
+Her mom places a third of the remaining 750 pieces, which is 750/3 = 250 pieces.
+After her mom places 250 pieces, there are 750 - 250 = 500 jigsaw pieces left to be placed.
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  To determine the total number of cookies Cody and Amir eat together, we need to follow these steps:
+
+1. Identify the number of cookies Amir eats.
+2. Calculate the number of cookies Cody eats.
+3. Add the number of cookies eaten by Cody and Amir.
+
+1. Amir eats 5 cookies.
+2. Cody eats three times as many cookies as Amir, so Cody eats \(3 \times 5 = 15\) cookies.
+3. The total number of cookies eaten by both Cody and Amir is \(5 + 15 = \boxed{20} cookies.
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  The outer dimensions of each box are 5 inches by 6 inches by 4 inches. Since the walls are 1 inch thick, the inner dimensions are (5-1) inches by (6-1) inches by (4-1) inches, which is 4 inches by 5 inches by 3 inches. The volume of one box is $4 \times 5 \times 3 = 60$ cubic inches. Since there are 3 boxes, the total inner volume of all 3 boxes is $3 \times 60 = \boxed{180}$ cubic inches.
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  On Monday and Tuesday, Frankie watched 2 hours of TV. On Thursday, he watched 1 hour and 30 minutes, which is 1.5 hours. On Friday, he watched 2 hours. So, in total, he watched 2 + 1.5 + 2 = 6.5 hours. If he watched 7 hours in total, then he watched 7 - 6.5 = 0.5 hours on Wednesday. Since each episode is 30 minutes long, he watched 0.5 hours / 30 minutes/hour = 1 episode on Wednesday.
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  Let x be the number of cookies Henry baked last year.
+
+He wanted to make twice as many as he did last year, so he wanted to make 2x cookies.
+
+He actually baked 15 more cookies than he meant to, so he baked 2x + 15 cookies.
+
+He dropped 5 cookies, so he has 2x + 15 - 5 = 110 cookies left.
+
+Solving for x, we get 2x = 100, so x = 50.
+
+The answer is: 50
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  The total cost of 10 gallons of gas at $3.00 per gallon is 10 * $3.00 = $30.00.
+
+The cashback reward is $0.20 per gallon, so for 10 gallons, the total cashback is 10 * $0.20 = $2.00.
+
+Therefore, the total cost after the cashback rewards is $30.00 - $2.00 = $28.00.
+
+So, the cost of the gas is $28.00.
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  Beatrice ate 2 roll-ups wide x 24 roll-ups long = 48 roll-ups.
+Marcel ate 3 roll-ups wide x 14 roll-ups long = 42 roll-ups.
+To find the average, we add the number of roll-ups they both ate and divide by 2.
+So, the average is (48 roll-ups + 42 roll-ups) / 2 = 90 roll-ups / 2 = 45 roll-ups.
+Therefore, on average, they ate 45 roll-ups.
+Final answer: 45
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+====================
+answer:  Julia rowed 64 seconds / 16 seconds = 4 sets of 20 feet.
+Each set of 20 feet is 20 feet / 2 = 10 feet.
+So, Julia rowed 4 sets * 10 feet = 40 feet.
+The boat takes on 2 liters of water for every 10 feet rowed.
+Therefore, the boat took on 40 feet / 10 feet * 2 liters = 8 liters of water.
+The boat took on 8 liters of water by the time Julia reached shore.
+nfe:  84
+avg nfe:  77.71428571428571
+====================
+
+Generating...:  82%|████████▏ | 14/17 [02:01<00:26,  8.84s/it]====================
+answer:  Each teacher has 2 lessons per day, and there are 4 teachers. Therefore, the total number of lessons per day is 2 lessons/teacher * 4 teachers = 8 lessons/day.
+
+The whiteboard is cleaned 3 times per lesson. So, the total number of times the whiteboard is cleaned in a day is 8 lessons/day * 3 times/lesson = 24 times/day.
+
+Therefore, the whiteboard is cleaned 24 times in a day.
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  To determine how many flowers Ryan has after 15 days, we need to calculate the total number of flowers he plants and then account for the flowers that did not grow.
+
+Ryan plants 2 flowers each day. Over 15 days, he plants:
+\[ 2 \times 15 = 30 \text{ flowers} \]
+
+However, 5 of these flowers did not grow. Therefore, the number of flowers that grew is:
+\[ 30 - 5 = 25 \]
+
+So, Ryan has 25 flowers after some successfully grew.
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  Since Jamal's phone can hold 6 times more photographs than Brittany's phone, Brittany's phone can hold 1800/6 = 300 photographs.
+The maximum number of photographs that Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph of the ducks at the zoo, so the number of birds in Jamal's photograph is 300/50 = 6.
+Therefore, 6 ducks that can be seen in Jamal's photograph of the ducks at the zoo.
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  She bought 10 boards at $10 each for $100
+She bought 5 boards at $16 each for $80
+She bought 10+5 = 15 boards
+She bought 15 boards at $10 each for $150
+She bought 15 boards at $10 each for $150
+She bought 15 boards at $10 each for $150
+Her profit is $150-$100-$150-$80 = -$80
+The answer is -80
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  The ratio of teaspoons of sugar to cups of water is 7:13. This means for every 7 teaspoons of sugar, there are 13 cups of water.
+
+The total number of parts in the ratio is 7 + 13 = 20.
+
+Katy used a total of 120 teaspoons of sugar and cups of water.
+
+So, each part of the ratio represents 120 / 20 = 6 teaspoons.
+
+Since there are 7 parts of sugar, Katy used 7*6 = 42 teaspoons of sugar.
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  John buys 2 pairs of shoes for each of his 3 children, so he buys a total of 2 x 3 = 6 pairs of shoes.
+Each pair of shoes costs $60, so the total cost is 6 x $60 = $360.
+Therefore, John paid $360.
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  On the first day, there were 2 containers with 5 vehicles each, making a total of 2 * 5 = 10 vehicles.
+
+On the second day, the total number of vehicles became 30. Therefore, the number of additional vehicles on the second day is 30 - 10 = 20 vehicles.
+
+Since each container contains 5 vehicles, the number of containers imported on the second day is 20 vehicles / 5 vehicles per container = 4 containers.
+
+Therefore, the number of containers imported on the second day is 4 containers.
+nfe:  85
+avg nfe:  78.2
+====================
+
+====================
+answer:  Four years ago, Adrien earned $40000, which is 30% higher than Lylah's salary, meaning Lylah earned $40000/1.3 = $30000 four years ago.
+Four years later, Adrien's salary increased by 40%, meaning he earned $40000*1.4 = $56000
+The total salary of the two is $56000+$30000 = $86000
+The answer is 86000
+nfe:  85
+avg nfe:  78.2
+====================
+
+Generating...:  88%|████████▊ | 15/17 [02:10<00:17,  8.98s/it]====================
+answer:  Miguel uses 2 pads of paper a week, and each pad has 30 sheets. Therefore, he uses 2 pads/week * 30 sheets/pad = 60 sheets/week. 
+
+Assuming a month has 4 weeks, Miguel uses 60 sheets/week * 4 weeks/month = 240 sheets/month.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  Morisette brought 5 apples and 8 oranges, for a total of 5 + 8 = 13 fruits.
+
+Kael brought twice the amount of apples as Morisette, so he brought 2 * 5 = 10 apples.
+Kael also brought half the number of oranges as Morisette, so he brought 8 / 2 = 4 oranges.
+In total, Kael brought 10 + 4 = 14 fruits.
+
+Therefore, the total number of fruits is 13 + 14 = 27 fruits.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  Sadie slept 8 hours on Monday. For the next two days, she slept 2 hours less each day, so she slept 8 - 2 = 6 hours each day. For the rest of the week, she slept 1 hour more than those two days, so she slept 6 + 1 = 7 hours each day. 
+
+In total, Sadie slept 8 (Monday) + 6 (Tuesday) + 6 (Wednesday) + 7 (Thursday) + 7 (Friday) + 7 (Saturday) = 43 hours throughout the week.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  Rosie can run 10 miles per hour for 3 hours, so she covers 10 miles/hour * 3 hours = 30 miles. After that, she runs 5 miles per hour for the remaining 4 hours, so she covers 5 miles/hour * 4 hours = 20 miles. In total, Rosie can run 30 miles + 20 miles = 50 miles in 7 hours.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  Jennie started with 60 letters needing stamps and put stamps on one-third of them. This means she put stamps on 60 / 3 = 20 letters.
+
+After putting stamps on 20 letters, she has 60 - 20 = 40 letters left needing stamps.
+
+If there are now 30 letters in the pile of already-stamped letters, then the pile of already-stamped letters originally had 30 - 20 = 10 letters.
+
+Therefore, Jennie started with 10 letters of already-stamped letters.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  Let's denote the number of spoons in the package that Julia bought as \( x \).
+
+According to the problem, Julia had \( x \) spoons initially, received 5 more spoons from her husband, and then used 3 spoons. Finally, she ended up with 12 spoons.
+
+So, we can set up the following equation:
+\[ x + 5 - 3 = 12 \]
+
+Solving for \( x \):
+\[ x + 2 = 12 \]
+\[ x = 10 \]
+
+Julia initially bought 10 spoons.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  Dylan bought 38 chicken sausages. He also bought 6 more than chicken sausages, which means he bought 38 + 6 = 44 fish sausages. To find the total number of sausages, you add the number of chicken sausages to the number of fish sausages: 38 + 44 = 82. Therefore, Dylan bought a total of 82 sausages.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+====================
+answer:  To find the total number of friends Lily and Amy have together, we need to determine the number of friends Amy made and then add that to the number of friends Lily made.
+
+Lily made 50 friends. Amy made 20 more friends than Lily. Therefore, Amy made:
+\[ 50 + 20 = 70 \]
+
+Now, we add the number of friends Lily made to the number of friends Amy made:
+\[ 50 + 70 = 120 \]
+
+So, Lily and Amy together have 120 friends altogether.
+nfe:  70
+avg nfe:  77.6875
+====================
+
+Generating...:  94%|█████████▍| 16/17 [02:18<00:08,  8.65s/it]====================
+answer:  Each watermelon costs 3*15 = 45$. An orange costs 45-5 = 40$. Dillon will buy 4*45 = 180$ on watermelons, 20*15 = 300$ on peppers, and 10*40 = 400$ on oranges. In total, he will spend 180+300+400 = 880$.
+nfe:  70
+avg nfe:  77.45454545454545
+====================
+
+====================
+answer:  Each patient is seen for 24/60=$0.4 hours
+So each patient pays 0.4*200=$80
+So the hospital makes 500*80=$40000 from patients
+The doctors cost 500*150=$75000
+So their profit is 40000-75000=$-35000
+The answer is -35000
+nfe:  70
+avg nfe:  77.45454545454545
+====================
+
+====================
+answer:  First, we need to determine how many elves quit after children vomit on them. A third of the 60 elves quit:
+
+\[ \frac{1}{3} \times 60 = 20 \]
+
+So, 20 elves quit. This leaves:
+
+\[ 60 - 20 = 40 \]
+
+Next, 10 of the remaining elves quit after kids kick their shins:
+
+\[ 40 - 10 = 30 \]
+
+Therefore, the number of elves left is 30.
+nfe:  70
+avg nfe:  77.45454545454545
+====================
+
+====================
+answer:  To find Joseph's total expenditure for May and June, we need to calculate his expenditure for each month and then add them together.
+
+Joseph's expenditure in May was $500. In June, his expenditure was $60 less than in May. Therefore, his expenditure in June was:
+
+$500 - $60 = $440
+
+Now, we add the expenditures for May and June together:
+
+$500 + $440 = $940
+
+So, Joseph's total expenditure for May and June was $940.
+nfe:  70
+avg nfe:  77.45454545454545
+====================
+
+Generating...: 100%|██████████| 17/17 [02:24<00:00,  7.76s/it]Generating...: 100%|██████████| 17/17 [02:24<00:00,  8.47s/it]
+Total number of tokens generated: 15028
+Total time taken: 144.06168460845947 seconds
+Tokens per second: 104.31642150878906
+Total NFE is 10224
+Total number of requests: 132
+Total time taken: 144.06 seconds
+Token throughput: 104.32 tokens/sec
+Request throughput: 0.92 req/sec
+Batch throughput: 0.12 batch/sec
+Token throughput per GPU: 104.32 tokens/sec/GPU
+2025-08-28:21:41:31,296 INFO     [lm_eval.loggers.evaluation_tracker:272] Output path not provided, skipping saving results aggregated
+llada_dist (model_path=GSAI-ML/LLaDA-8B-Instruct,gen_length=128,steps=8,block_length=16,use_cache=True,dual_cache=True,factor=1.0,show_speed=True), gen_kwargs: (None), limit: 0.1, num_fewshot: 0, batch_size: 8
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     0|exact_match|↑  |0.6742|±  |0.0409|
+|     |       |strict-match    |     0|exact_match|↑  |0.0000|±  |0.0000|
+

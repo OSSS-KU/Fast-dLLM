@@ -1,4 +1,3 @@
-# generate.py
 # Copyright 2025 NVIDIA CORPORATION & AFFILIATES
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -22,14 +21,6 @@ import torch.nn.functional as F
 import os
 from transformers import AutoTokenizer, AutoModel
 from model.modeling_llada import LLaDAModelLM
-
-# --- ADD: utility to check if row ends with a given token id sequence ---
-def _tail_matches(row_ids: torch.Tensor, tail_ids: torch.Tensor) -> bool:
-    # row_ids: 1D LongTensor [T], tail_ids: 1D LongTensor [L]
-    L = tail_ids.numel()
-    if L == 0 or row_ids.numel() < L:
-        return False
-    return torch.equal(row_ids[-L:], tail_ids.to(device=row_ids.device, dtype=row_ids.dtype))
 
 def add_gumbel_noise(logits, temperature):
     '''
@@ -68,11 +59,7 @@ def get_num_transfer_tokens(mask_index, steps):
 
 @ torch.no_grad()
 def generate(model, prompt, steps=128, gen_length=128, block_length=128, temperature=0.,
-            remasking='low_confidence', mask_id=126336, threshold=None, factor=None,
-            eos_token_id=None,
-            stop_token_ids=None,   # list[list[int]] or None
-            event_cb=None):        # callable(step:int, y:LongTensor[B,T])):
-            #  remasking='low_confidence', mask_id=126336, threshold=None, factor=None):
+             remasking='low_confidence', mask_id=126336, threshold=None, factor=None):
     '''
     Args:
         model: Mask predictor.
@@ -88,12 +75,6 @@ def generate(model, prompt, steps=128, gen_length=128, block_length=128, tempera
     x = torch.full((prompt.shape[0], prompt.shape[1] + gen_length), mask_id, dtype=torch.long).to(model.device)
     x[:, :prompt.shape[1]] = prompt.clone()
 
-    # --- ADD: callback after the first update of this block ---
-    if event_cb is not None:
-        # torch.cuda.synchronize()   # 필요 시 활성화
-        step_idx = num_block * steps + 0  # 블록 첫 업데이트
-        event_cb(step_idx, x)
-    
     assert gen_length % block_length == 0
     num_blocks = gen_length // block_length
 
@@ -115,13 +96,6 @@ def generate(model, prompt, steps=128, gen_length=128, block_length=128, tempera
             else:
                 x0, transfer_index = get_transfer_index_dynamic(logits, temperature, remasking, mask_index, x, None, factor)
             x[transfer_index] = x0[transfer_index]
-
-            # --- ADD: callback after every update inside while-loop ---
-            if event_cb is not None:
-                # torch.cuda.synchronize()
-                step_idx = num_block * steps + (i - 1)   # 이번 갱신 시점
-                event_cb(step_idx, x)
-                
             i += 1
             if (x[:, prompt.shape[1] + num_block * block_length: prompt.shape[1] + (num_block + 1) * block_length] == mask_id).sum() == 0:
                 break
@@ -211,11 +185,7 @@ def generate_with_prefix_cache(model, prompt, steps=128, gen_length=128, block_l
 
 @ torch.no_grad()
 def generate_with_dual_cache(model, prompt, steps=128, gen_length=128, block_length=128, temperature=0.,
-            remasking='low_confidence', mask_id=126336, threshold=None, factor=None,
-            eos_token_id=None,
-            stop_token_ids=None,   # list[list[int]] or None
-            event_cb=None):        # callable(step:int, y:LongTensor[B,T])
-            # remasking='low_confidence', mask_id=126336, threshold=None, factor=None):
+            remasking='low_confidence', mask_id=126336, threshold=None, factor=None):
     '''
     Args:
         model: Mask predictor.
@@ -255,13 +225,6 @@ def generate_with_dual_cache(model, prompt, steps=128, gen_length=128, block_len
         else:
             x0, transfer_index = get_transfer_index_dynamic(output.logits, temperature, remasking, mask_index, x, None, factor)
         x[transfer_index] = x0[transfer_index]
-
-        # --- ADD: callback after the first update of this block ---
-        if event_cb is not None:
-            # torch.cuda.synchronize()   # 필요 시 활성화
-            step_idx = num_block * steps + 0  # 블록 첫 업데이트
-            event_cb(step_idx, x)
-            
         nfe += 1
 
         i = 1
@@ -282,13 +245,6 @@ def generate_with_dual_cache(model, prompt, steps=128, gen_length=128, block_len
                 x0, transfer_index = get_transfer_index_dynamic(logits, temperature, remasking, mask_index, 
                                                 x[:, current_block_start:current_block_end], None, factor)
             x[:, current_block_start:current_block_end][transfer_index] = x0[transfer_index]
-
-            # --- ADD: callback after every update inside while-loop ---
-            if event_cb is not None:
-                # torch.cuda.synchronize()
-                step_idx = num_block * steps + (i - 1)   # 이번 갱신 시점
-                event_cb(step_idx, x)
-
             i += 1
 
     return x, nfe
@@ -338,59 +294,26 @@ def get_transfer_index_dynamic(logits, temperature, remasking, mask_index, x, nu
     confidence = torch.where(mask_index, x0_p, -np.inf)
 
     transfer_index = torch.zeros_like(x0, dtype=torch.bool, device=x0.device)
-    # num_transfer_tokens = mask_index.sum(dim=1, keepdim=True)
-    num_transfer_tokens = mask_index.sum(dim=1)  # keepdim=False
+    num_transfer_tokens = mask_index.sum(dim=1, keepdim=True)
     
-    B = confidence.size(0)
-    for j in range(B):
-        nt = int(num_transfer_tokens[j].item())
-        if nt == 0:
-            # 이 샘플은 이번 스텝에 옮길 토큰 없음
-            continue
+    for j in range(confidence.shape[0]):
+        ns=list(range(1,num_transfer_tokens[j]+1))
+        es=[factor/(n+1) for n in ns]
+        threshs=[1-e for e in es]
 
-        # 임계값 벡터 생성
-        ns = torch.arange(1, nt + 1, device=x0.device, dtype=torch.float32)
-        es = factor / (ns + 1.0)
-        threshs = 1.0 - es
-        threshs[0] = -1.0  # 최소 1개는 옮기도록
-
-        # 마스크된 위치에서만 신뢰도 정렬
-        masked_idx = torch.nonzero(mask_index[j], as_tuple=False).squeeze(-1)
-        conf_masked = confidence[j][masked_idx]
-        sorted_conf, _ = torch.sort(conf_masked, descending=True)
-
-        # top_i 결정
-        top_i = nt
-        for k in range(nt):
-            if sorted_conf[k] < threshs[k]:
-                top_i = k
+        # at least one token is transferred
+        threshs[0]=-1
+        sorted_confidence=torch.sort(confidence[j][mask_index[j]],dim=-1,descending=True)[0]
+        assert len(sorted_confidence)==len(threshs)
+        for top_i in range(len(threshs)):
+            if sorted_confidence[top_i]<threshs[top_i]:
                 break
-        if top_i == 0 or top_i == nt:
-            top_i = min(nt, max(1, top_i + 1))
 
-        # 상위 top_i를 마스크된 인덱스 안에서만 선택
-        vals, idx_local = torch.topk(conf_masked, k=top_i)
-        select_index = masked_idx[idx_local]
+        if top_i == 0 or top_i == len(threshs)-1:
+            top_i+=1
+
+        _, select_index = torch.topk(confidence[j], k=top_i)
         transfer_index[j, select_index] = True
-        
-    # for j in range(confidence.shape[0]):
-    #     ns=list(range(1,num_transfer_tokens[j]+1))
-    #     es=[factor/(n+1) for n in ns]
-    #     threshs=[1-e for e in es]
-
-    #     # at least one token is transferred
-    #     threshs[0]=-1
-    #     sorted_confidence=torch.sort(confidence[j][mask_index[j]],dim=-1,descending=True)[0]
-    #     assert len(sorted_confidence)==len(threshs)
-    #     for top_i in range(len(threshs)):
-    #         if sorted_confidence[top_i]<threshs[top_i]:
-    #             break
-
-    #     if top_i == 0 or top_i == len(threshs)-1:
-    #         top_i+=1
-
-    #     _, select_index = torch.topk(confidence[j], k=top_i)
-    #     transfer_index[j, select_index] = True
 
     return x0, transfer_index
 

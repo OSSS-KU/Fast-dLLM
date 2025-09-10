@@ -1,0 +1,64 @@
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2025-08-28:21:31:11,379 WARNING  [lm_eval.__main__:316]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2025-08-28:21:31:11,381 INFO     [lm_eval.__main__:379] Selected Tasks: ['gsm8k']
+2025-08-28:21:31:11,383 INFO     [lm_eval.evaluator:169] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2025-08-28:21:31:11,383 INFO     [lm_eval.evaluator:206] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'gen_length': 128, 'steps': 8, 'block_length': 16, 'use_cache': True, 'dual_cache': True, 'factor': 1.0, 'show_speed': True}
+[yhgo] batch size = 8
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:00<00:01,  3.70it/s]Loading checkpoint shards:  33%|███▎      | 2/6 [00:00<00:00,  4.29it/s]Loading checkpoint shards:  50%|█████     | 3/6 [00:00<00:00,  4.26it/s]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:00<00:00,  4.34it/s]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:01<00:00,  4.45it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.51it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.39it/s]
+2025-08-28:21:31:24,611 WARNING  [lm_eval.evaluator:275] Overwriting default num_fewshot of gsm8k from 5 to 5
+2025-08-28:21:31:24,611 INFO     [lm_eval.api.task:420] Building contexts for gsm8k on rank 0...
+  0%|          | 0/132 [00:00<?, ?it/s] 16%|█▌        | 21/132 [00:00<00:00, 202.25it/s] 32%|███▏      | 42/132 [00:00<00:00, 203.63it/s] 48%|████▊     | 63/132 [00:00<00:00, 204.22it/s] 64%|██████▎   | 84/132 [00:00<00:00, 197.46it/s] 80%|███████▉  | 105/132 [00:00<00:00, 200.21it/s] 95%|█████████▌| 126/132 [00:00<00:00, 201.58it/s]100%|██████████| 132/132 [00:00<00:00, 201.42it/s]
+2025-08-28:21:31:25,271 INFO     [lm_eval.evaluator:517] Running generate_until requests
+Batching...:   0%|          | 0/132 [00:00<?, ?it/s]Batching...: 100%|██████████| 132/132 [00:00<00:00, 1768843.86it/s]
+Generating...:   0%|          | 0/17 [00:00<?, ?it/s]Generating...:   0%|          | 0/17 [00:01<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/work/yhgo/Fast-dLLM/llada/eval_llada.py", line 408, in <module>
+    cli_evaluate()
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/__main__.py", line 389, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/utils.py", line 422, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/evaluator.py", line 308, in simple_evaluate
+    results = evaluate(
+              ^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/utils.py", line 422, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/evaluator.py", line 528, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/eval_llada.py", line 342, in generate_until
+    generated_answer, nfe = generate_with_dual_cache(self.model, input_ids, steps=self.steps, gen_length=self.gen_length, block_length=self.block_length, 
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/generate.py", line 226, in generate_with_dual_cache
+    x0, transfer_index = get_transfer_index_dynamic(output.logits, temperature, remasking, mask_index, x, None, factor)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/generate.py", line 285, in get_transfer_index_dynamic
+    p = F.softmax(logits.to(torch.float64), dim=-1)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/functional.py", line 2140, in softmax
+    ret = input.softmax(dim)
+          ^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 9.29 GiB. GPU 0 has a total capacity of 39.49 GiB of which 7.25 GiB is free. Including non-PyTorch memory, this process has 32.24 GiB memory in use. Of the allocated memory 31.39 GiB is allocated by PyTorch, and 355.51 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/work/.local/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
+    args.func(args)
+  File "/home/work/.local/lib/python3.12/site-packages/accelerate/commands/launch.py", line 1174, in launch_command
+    simple_launcher(args)
+  File "/home/work/.local/lib/python3.12/site-packages/accelerate/commands/launch.py", line 769, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/usr/bin/python3', 'eval_llada.py', '--tasks', 'gsm8k', '--num_fewshot', '5', '--confirm_run_unsafe_code', '--model', 'llada_dist', '--model_args', 'model_path=GSAI-ML/LLaDA-8B-Instruct,gen_length=128,steps=8,block_length=16,use_cache=True,dual_cache=True,factor=1.0,show_speed=True', '--limit', '0.1', '--batch_size', '8']' returned non-zero exit status 1.

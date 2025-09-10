@@ -1,0 +1,566 @@
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2025-08-29:14:19:58,330 WARNING  [lm_eval.__main__:316]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2025-08-29:14:19:58,332 INFO     [lm_eval.__main__:379] Selected Tasks: ['gsm8k']
+2025-08-29:14:19:58,334 INFO     [lm_eval.evaluator:169] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2025-08-29:14:19:58,334 INFO     [lm_eval.evaluator:206] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'gen_length': 128, 'steps': 8, 'block_length': 16, 'use_cache': True, 'dual_cache': True, 'factor': 1.0, 'show_speed': True}
+[yhgo] batch size = 1
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:00<00:01,  3.43it/s]Loading checkpoint shards:  33%|███▎      | 2/6 [00:00<00:00,  4.16it/s]Loading checkpoint shards:  50%|█████     | 3/6 [00:00<00:00,  4.28it/s]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:00<00:00,  4.44it/s]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:01<00:00,  4.49it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.52it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.38it/s]
+2025-08-29:14:20:11,467 WARNING  [lm_eval.evaluator:275] Overwriting default num_fewshot of gsm8k from 5 to 1
+2025-08-29:14:20:11,468 INFO     [lm_eval.api.task:420] Building contexts for gsm8k on rank 0...
+  0%|          | 0/132 [00:00<?, ?it/s] 55%|█████▍    | 72/132 [00:00<00:00, 713.83it/s]100%|██████████| 132/132 [00:00<00:00, 714.88it/s]
+2025-08-29:14:20:11,657 INFO     [lm_eval.evaluator:517] Running generate_until requests
+Batching...:   0%|          | 0/132 [00:00<?, ?it/s]Batching...: 100%|██████████| 132/132 [00:00<00:00, 1492313.01it/s]
+Generating...:   0%|          | 0/132 [00:00<?, ?it/s]====================
+answer:  Janet's ducks lay 16 eggs per day. She eats 3 eggs for breakfast and bakes 4 eggs for her friends, so she uses a total of 3 + 4 = 7 eggs per day.
+
+The remainder of the eggs is 16 - 7 = 9 eggs.
+
+She sells each egg for $2, so she makes 9 * $2 = $18 per day from selling the eggs.
+
+Therefore, Janet makes $18 every day at the farmers' market.
+nfe:  46
+avg nfe:  46.0
+====================
+
+[timing] sample=0 eos_step=7 eos_time=3.5016s tail_wait=0.0025s finished=True
+Generating...:   1%|          | 1/132 [00:03<07:40,  3.51s/it]====================
+answer:  The robe takes 2 bolts of blue fiber and half that much white fiber. 
+
+First, calculate the amount of white fiber:
+- Half of 2 bolts of blue fiber is \( \frac{2}{2} = 1 \) bolt of white fiber.
+
+Next, add the amount of blue fiber to the amount of white fiber:
+- Blue fiber: 2 bolts
+- White fiber: 1 bolt
+
+Total bolts of fiber:
+\[ 2 + 1 = 3 \] bolts.
+
+So, the robe takes a total of 3 bolts of fiber.
+nfe:  49
+avg nfe:  47.5
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.8860s tail_wait=0.1273s finished=True
+Generating...:   2%|▏         | 2/132 [00:06<06:58,  3.22s/it]====================
+answer:  The new value of the house is $80,000 + $50,000 = $130,000.
+The repairs increased the value by 150%, so the new value is $130,000 * 1.5 = $195,000.
+The profit is the difference between the new value and the original price, so it is $195,000 - $80,000 = $115,000.
+#### 115,000
+nfe:  44
+avg nfe:  46.333333333333336
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.6194s tail_wait=0.0653s finished=True
+Generating...:   2%|▏         | 3/132 [00:09<06:23,  2.98s/it]====================
+answer:  James runs 3 sprints each time, and each sprint is 60 meters long. So, he runs 3 * 60 = <<3*60=180>>180 meters each time.
+He runs 3 times a week, so he runs a total of 180 * 3 = <<180*3=540>>540 meters per week.
+Therefore, James runs 540 meters a week.540
+nfe:  49
+avg nfe:  47.0
+====================
+
+[timing] sample=0 eos_step=6 eos_time=2.6420s tail_wait=0.3675s finished=True
+Generating...:   3%|▎         | 4/132 [00:12<06:22,  2.99s/it]====================
+answer:  Wendi needs a total of 20 chickens x 3 cups per chicken = <<20*3=60>>60 cups of feed per day.
+She has already given the chickens 15 cups in the morning and 25 cups in the afternoon, for a total of 15 + 25 = <<15+25=40>>40 cups.
+Therefore, she needs to give 60 - 40 = <<60-40=20>>20 cups of feed in the final meal of the day.
+#### 20
+nfe:  39
+avg nfe:  45.4
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.3868s tail_wait=0.0018s finished=True
+Generating...:   4%|▍         | 5/132 [00:14<05:52,  2.77s/it]====================
+answer:  Kylar wants to buy 16 glasses, so he needs to pay for 16 / 2 = 8 pairs of glasses.
+The cost of each pair of glasses is $5 + $5 = $10.
+Since every second glass costs 60% of the price, the cost of every second glass is $5 * 0.6 = $3.
+So, the total cost for each pair of glasses is $10 - $3 = $7.
+Therefore, Kylar needs to pay 8 * $7 = $56.
+#### 56
+nfe:  65
+avg nfe:  48.666666666666664
+====================
+
+[timing] sample=0 eos_step=8 eos_time=3.9865s tail_wait=0.0000s finished=False
+Generating...:   5%|▍         | 6/132 [00:18<06:41,  3.19s/it]====================
+answer:  If Seattle has 20 sheep, then Charleston has 4 * 20 = <<4*20=80>>80 sheep.
+Toulouse has twice as many sheep as Charleston, so Toulouse has 2 * 80 = <<2*80=160>>160 sheep.
+Together, Toulouse, Charleston, and Seattle have 160 + 80 + 20 = <<160+80+20=260>>260 sheep.
+#### 260Answer achieved: 260
+nfe:  36
+avg nfe:  46.857142857142854
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.0065s tail_wait=0.1893s finished=True
+Generating...:   5%|▌         | 7/132 [00:20<05:57,  2.86s/it]====================
+answer:  Carla can download 2 GB/minute, so it will take 200 GB / 2 GB/minute = 100 minutes to download the file normally.
+However, 40% of the way through the download, she has to restart, which takes 20 minutes.
+So, the total time to download the file is 100 minutes + 20 minutes = 120 minutes.
+Therefore, it takes 120 minutes to download the 200 GB file.
+#### 120
+The answer is: 120
+nfe:  67
+avg nfe:  49.375
+====================
+
+[timing] sample=0 eos_step=7 eos_time=4.0051s tail_wait=0.2523s finished=True
+Generating...:   6%|▌         | 8/132 [00:25<06:50,  3.31s/it]====================
+answer:  John drives for 3 hours at 60 mph, so he covers 3 * 60 = 180 miles.
+He then spends 2 hours in standstill traffic, so he doesn't cover any distance during that time.
+He spends the next half-hour driving at 30 mph, so he covers 0.5 * 30 = 15 miles.
+Finally, he drives the remaining 1 hour at 80 mph, so he covers 1 * 80 = 80 miles.
+In total, John is 275 miles away.
+nfe:  57
+avg nfe:  50.22222222222222
+====================
+
+[timing] sample=0 eos_step=8 eos_time=3.1790s tail_wait=0.3174s finished=True
+Generating...:   7%|▋         | 9/132 [00:28<06:54,  3.37s/it]====================
+answer:  Eliza earns $10 per hour for the first 40 hours, so she earns 40 * $10 = $400 for those hours.
+For the remaining hours, she earns 1.2 * $10 = $12 per hour.
+Eliza worked 45 - 40 = 5 overtime hours.
+She earns 5 * $12 = $60 for the overtime hours.
+Therefore, her total earnings for the week are $400 + $60 = $460.
+The final result is 460
+nfe:  52
+avg nfe:  50.4
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.8029s tail_wait=0.3756s finished=True
+Generating...:   8%|▊         | 10/132 [00:31<06:43,  3.31s/it]====================
+answer:  In the first month, the program had 60 downloads.
+In the second month, the number of downloads was three times as many as the first month, so it was 3 * 60 = 180 downloads.
+In the third month, the number of downloads reduced by 30%, so it was 180 - (180 * 1/30) = 126 downloads.
+In total, the program had 60 + 180 + 126 = 366 downloads over three months.
+#### 366
+nfe:  45
+avg nfe:  49.90909090909091
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.7372s tail_wait=0.0000s finished=False
+Generating...:   8%|▊         | 11/132 [00:34<06:19,  3.13s/it]====================
+answer:  Toula bought 3 dozen donuts at $68 per dozen, so the cost for the donuts is 3 * $68 = $204. She also bought 2 dozen mini cupcakes at $80 per dozen, so the cost for the mini cupcakes is 2 * $80 = $160. And 6 dozen mini cheesecakes at $55 per dozen, so the cost for the mini cheesecakes is 6 * $55 = $330. The total cost is $204 + $160 + $330 = $
+nfe:  46
+avg nfe:  49.583333333333336
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.7665s tail_wait=0.0639s finished=True
+Generating...:   9%|▉         | 12/132 [00:37<06:05,  3.04s/it]====================
+answer:  Each year, Carlos earns 7 lemons x $1.5lemon = $<<7*1.5=10>>10 from selling the lemons.
+Each year, he spends $3 to water and feed the tree, so he earns $10 - $3 = $<<10-3=7>>7 per year.
+The tree costs $90 to plant, so it will take him $90 / $7 = <<90/7=13>>13 years to earn enough money to cover the cost of planting the tree.
+#### 13
+nfe:  65
+avg nfe:  50.76923076923077
+====================
+
+[timing] sample=0 eos_step=10 eos_time=3.8764s tail_wait=0.1278s finished=True
+Generating...:  10%|▉         | 13/132 [00:41<06:36,  3.33s/it]====================
+answer:  Let x be the number of vacuum cleaners Melanie started with.
+She sold 1/3x at the green house, so she had 2/3x left.
+She sold 2 more at the red house, so she had 2/3x - 2 left.
+She sold half of what was left at the orange house, so she had 1/3x - 1 left.
+We know that she has 5 vacuum cleaners left, so 1/3x - 1 = 5.
+Solving for x gives us x = 18.
+#### 18
+nfe:  48
+avg nfe:  50.57142857142857
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.9603s tail_wait=0.0000s finished=False
+Generating...:  11%|█         | 14/132 [00:44<06:20,  3.22s/it]====================
+answer:  20% of 20 students is 0.2 * 20 = 4 students enrolled in contemporary dance.
+So, 20 - 4 = 16 students are remaining.
+25% of 16 students is 0.25 * 16 = 4 students enrolled in jazz dance.
+Therefore, 16 - 4 = 12 students are enrolled in hip-hop dance.
+The percentage of students enrolled in hip-hop dance is (12/20) * 100% = 60%.
+#### 60
+nfe:  40
+avg nfe:  49.86666666666667
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.3644s tail_wait=0.0641s finished=True
+Generating...:  11%|█▏        | 15/132 [00:46<05:49,  2.98s/it]====================
+answer:  The profit from buying the jewelry would be $5,000 x 2.5% = $<<5000*2.5%=125>>125.
+The profit from buying the electronic gadgets would be $8,000 x 1.2% = $<<8000*1.2%=96>>96.
+Therefore, the merchant should choose to buy the jewelry to maximize his profit, as it would result in a higher profit of $125 compared to $96 from buying the electronic gadgets.
+Answer achieved: 125
+nfe:  61
+avg nfe:  50.5625
+====================
+
+[timing] sample=0 eos_step=7 eos_time=3.3676s tail_wait=0.3773s finished=True
+Generating...:  12%|█▏        | 16/132 [00:50<06:12,  3.21s/it]====================
+answer:  To find the total distance covered by each train in the two days, we need to add the distances traveled on each day.
+
+On the first day, each train travels 80 miles westward.
+On the second day, each train travels 150 miles northward.
+
+So, the total distance covered by each train in the two days is:
+
+80 miles (first day) + 150 miles (second day) = 230 miles.
+
+Therefore, each train covers a total distance of 230 miles in the two days.
+nfe:  42
+avg nfe:  50.05882352941177
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.4932s tail_wait=0.0640s finished=True
+Generating...:  13%|█▎        | 17/132 [00:53<05:46,  3.02s/it]====================
+answer:  Jill earns $20 per hour as a teacher, so she earns $20/hour * 35 hours = $700 per week as a teacher.
+Jill earns $30 per hour as a coach, so she earns $30/hour * 15 hours = $450 per week as a coach.
+Her total weekly earnings are $700 + $450 = $1150.
+Her annual salary is $1150/week * 50 weeks/year = $57,500.
+#### 57,500
+nfe:  44
+avg nfe:  49.72222222222222
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.6744s tail_wait=0.0017s finished=True
+Generating...:  14%|█▎        | 18/132 [00:55<05:32,  2.91s/it]====================
+answer:  Claire makes a 3 egg omelet every morning, so in one week, she eats 3 eggs/day x 7 days/week = 21 eggs/week.
+In 4 weeks, she will eat 21 eggs/week x 4 weeks = 84 eggs.
+To convert eggs to dozens, we divide the total number of eggs by 12: 84 eggs / 12 eggs/dozen = 7 dozens.
+Therefore, Claire will eat 7 dozens of eggs in 4 weeks.
+#### 7
+nfe:  42
+avg nfe:  49.31578947368421
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.4789s tail_wait=0.0645s finished=True
+Generating...:  14%|█▍        | 19/132 [00:58<05:16,  2.80s/it]====================
+answer:  Marissa has already walked 6 miles because 4 + 2 = 6
+She has 6 miles left to walk because 12 - 6 = 6
+She has 3 hours left because 1 + 1 = 3
+She needs an average speed of 4 miles per hour because 12 / 3 = 4
+She needs to walk 6 miles in 3 hours because 6 / 3 = 2
+She needs to walk at a speed of 6 miles per hour because 2 / (1 / 3) = 6
+#### 6
+nfe:  66
+avg nfe:  50.15
+====================
+
+[timing] sample=0 eos_step=7 eos_time=3.6147s tail_wait=0.4400s finished=True
+Generating...:  15%|█▌        | 20/132 [01:02<05:56,  3.18s/it]====================
+answer:  The 10 liters of orange drink is 2/3 * 10 = 6 liters of water.
+The 15 liters of pineapple drink is 3/5 * 15 = 9 liters of water.
+The total amount of water in the two drinks is 6 + 9 = 15 liters.
+After spilling one liter of the orange drink, the remaining amount of water is 15 - 1 = 14 liters.
+Therefore, the amount of water in the remaining 24 liters is 14 liters.
+Conclusively: 14
+nfe:  61
+avg nfe:  50.666666666666664
+====================
+
+[timing] sample=0 eos_step=7 eos_time=3.6730s tail_wait=0.1890s finished=True
+Generating...:  16%|█▌        | 21/132 [01:06<06:15,  3.38s/it]====================
+answer:  If Samantha is currently 31 years old, and Raymond was born 6 years before Samantha, then Raymond is currently:
+
+\[ 31 - 6 = 25 \text{ years old} \]
+
+Raymond had a son at the age of 23. To find out how many years ago Raymond's son was born, we subtract the age of the son from Raymond's current age:
+
+\[ 25 - 23 = 2 \text{ years} \]
+
+So, Raymond's son was born 2 years ago.
+
+#### 2
+nfe:  39
+avg nfe:  50.13636363636363
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.2868s tail_wait=0.0663s finished=True
+Generating...:  17%|█▋        | 22/132 [01:08<05:38,  3.08s/it]====================
+answer:  First, calculate the total number of DVDs bought by the first 3 customers:
+3 customers * 1 DVD/customer = 3 DVDs
+
+Next, calculate the total number of DVDs bought by the next 2 customers:
+2 customers * 2 DVDs/customer = 4 DVDs
+
+Since the last 3 customers don't buy any DVDs, we don't need to add them to the total.
+
+Now, add up the DVDs bought by the first 3 customers and the next 2 customers:
+3 DVDs + 4 DVDs = 7 DVDs
+
+Billy sold 7 DVDs.
+nfe:  41
+avg nfe:  49.73913043478261
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.3887s tail_wait=0.1262s finished=True
+Generating...:  17%|█▋        | 23/132 [01:11<05:16,  2.91s/it]====================
+answer:  The candle melts by 2 centimeters every hour. From 1:00 PM to 5:00 PM is a period of 4 hours.
+
+To find out how many centimeters shorter the candle will be, we multiply the number of hours by the rate of melting per hour:
+
+\[ 4 \text{ hours} \times 2 \text{ cm/hour} = 8 \text{ cm} \]
+
+Therefore, the candle will be 8 centimeters shorter after burning from 1:00 PM to 5:00 PM.
+
+Answer: 8 centimeters
+nfe:  43
+avg nfe:  49.458333333333336
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.2909s tail_wait=0.3152s finished=True
+Generating...:  18%|█▊        | 24/132 [01:13<05:04,  2.82s/it]====================
+answer:  Let x be the original price of the book.
+The discounted price is $19.50, which is 75% of the original price.
+So, 0.75x = $19.50.
+To find the original price, we divide both sides by 0.75:
+x = $19.50 / 0.75 = $<<19.50/0.75=26>>26.
+Therefore, the original price of the book was $26.
+#### 26Conclusively: 26
+nfe:  44
+avg nfe:  49.24
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.6708s tail_wait=0.0000s finished=False
+Generating...:  19%|█▉        | 25/132 [01:16<04:56,  2.77s/it]====================
+answer:  The cost of the chicken meal is $12.
+The cost of the 5 packs of milk is 5 x $3 = $15.
+The cost of the 4 apples is 4 x $1.50 = $6.
+The total cost of the chicken meal, milk, and apples is $12 + $15 + $6 = $33.
+So, the cost of the pizzas is $50 - $33 = $17.
+Marie ordered $17 / $8.50 = 2 boxes of pizza.
+#### 2
+nfe:  37
+avg nfe:  48.76923076923077
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.2306s tail_wait=0.0018s finished=True
+Generating...:  20%|█▉        | 26/132 [01:18<04:36,  2.61s/it]====================
+answer:  Mishka spent $49.50 on shorts because 3 x $16.50 = $49.50.
+She spent $67.50 on pants because 3 x $22.50 = $67.50.
+She spent $126 on shoes because 3 x $42 = $126.
+She spent a total of $343 on all the clothing items because $49.50 + $67.50 + $126 = $343.
+#### 343
+nfe:  31
+avg nfe:  48.111111111111114
+====================
+
+[timing] sample=0 eos_step=8 eos_time=1.8637s tail_wait=0.0000s finished=False
+Generating...:  20%|██        | 27/132 [01:20<04:10,  2.39s/it]====================
+answer:  Cynthia eats one serving of ice cream every night, so in 60 days, she will eat 60 servings.
+Each carton contains 15 servings, so she will need 60 / 15 = 4 cartons of ice cream.
+Each carton costs $4.00, so she will spend 4 * $4.00 = $16.00 on ice cream.
+#### 16.00
+nfe:  36
+avg nfe:  47.67857142857143
+====================
+
+[timing] sample=0 eos_step=6 eos_time=2.1110s tail_wait=0.0518s finished=True
+Generating...:  21%|██        | 28/132 [01:22<04:01,  2.32s/it]====================
+answer:  Henry made his first stop after 20 miles and his second stop 15 miles before the end of his trip. The total distance of his trip is 60 miles.
+
+To find the distance between his first and second stops, we subtract the distance to the first stop and the distance to the second stop from the total distance:
+
+60 miles (total distance) - 20 miles (first stop) - 15 miles (second stop) = 25 miles
+
+Therefore, Henry traveled 25 miles between his first and second stops.
+
+#### 25 miles
+nfe:  52
+avg nfe:  47.827586206896555
+====================
+
+[timing] sample=0 eos_step=7 eos_time=3.0702s tail_wait=0.1264s finished=True
+Generating...:  22%|██▏       | 29/132 [01:25<04:26,  2.58s/it]====================
+answer:  Let B be the cost of the boots.
+The first pair of heels costs $33.
+The second pair of heels costs 2 * $33 = $66.
+The total cost of the two pairs of heels is $33 + $66 = $99.
+According to the problem, the total cost of the heels is $5 less than the boots.
+So, $99 = B - $5.
+Adding $5 to both sides, we get B = $104.
+Therefore, the boots cost $104.
+#### 104
+nfe:  44
+avg nfe:  47.7
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.6636s tail_wait=0.0000s finished=False
+Generating...:  23%|██▎       | 30/132 [01:28<04:26,  2.61s/it]====================
+answer:  The total ratio of their ages is 7 + 11 = 18.
+Each part of the ratio represents 162 / 18 = 9 years.
+Allen's current age is 11 parts, which is 11 * 9 = 99 years.
+In 10 years, Allen's age will be 99 + 10 = 109 years.
+#### 109
+nfe:  42
+avg nfe:  47.516129032258064
+====================
+
+[timing] sample=0 eos_step=6 eos_time=2.5012s tail_wait=0.0527s finished=True
+Generating...:  23%|██▎       | 31/132 [01:30<04:21,  2.59s/it]====================
+answer:  The first friend guesses 80 jelly beans.
+The second friend says 20 more than half the first one, which is 80/2 + 20 = 100 jelly beans.
+The third friend says 25% more than the first one, which is 80 + 25% of 80 = 100 jelly beans.
+To find the average guess, we add up all the guesses and divide by 3: (80 + 100 + 100) / 3 = 90.
+#### 90
+nfe:  43
+avg nfe:  47.375
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.6185s tail_wait=0.0000s finished=False
+Generating...:  24%|██▍       | 32/132 [01:33<04:20,  2.60s/it]====================
+answer:  John takes care of 10 dogs, and each dog takes 0.5 hours a day to walk and take care of their business. Therefore, the total daily time spent taking care of the dogs is:
+
+10 dogs * 0.5 hours/dog = 5 hours/day
+
+To find out how many hours a week he spends taking care of the dogs, we multiply the daily time by the number of days in a week:
+
+5 hours/day * 7 days/week = 35 hours/week
+
+So, John spends 35 hours a week taking care of the dogs.
+nfe:  39
+avg nfe:  47.121212121212125
+====================
+
+[timing] sample=0 eos_step=8 eos_time=2.3616s tail_wait=0.0000s finished=False
+Generating...:  25%|██▌       | 33/132 [01:35<04:10,  2.53s/it]====================
+answer:  Let's denote the number of silver coins as \( S \).
+
+Since there are 30 more gold coins than silver coins, the number of gold coins is \( S + 30 \).
+
+The total number of coins is 110, so:
+\[ S + (S + 30) = 110 \]
+\[ 2S + 30 = 110 \]
+\[ 2S = 80 \]
+\[ S = 40 \]
+
+Therefore, the number of gold coins is also 40.
+nfe:  42
+avg nfe:  46.970588235294116
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.1853s tail_wait=0.3768s finished=True
+Generating...:  26%|██▌       | 34/132 [01:38<04:08,  2.54s/it]====================
+answer:  Raymond has 40 jewels.
+Aaron has 5 more jewels than half of Raymond's jewels, so Aaron has 40/2 + 5 = <<40/2+5=25>>25 jewels.
+Siobhan has 2 fewer jewels than Aaron, so Siobhan has 25 - 2 = <<25-2=23>>23 jewels.
+#### 23
+nfe:  25
+avg nfe:  46.34285714285714
+====================
+
+[timing] sample=0 eos_step=6 eos_time=1.3827s tail_wait=0.1034s finished=True
+Generating...:  27%|██▋       | 35/132 [01:40<03:35,  2.22s/it]====================
+answer:  In the first 20 minutes, Mike scores 4 points.
+In the second 20 minutes, he scores 25% more points than the first 20 minutes.
+To find 25% of 4 points, we multiply 4 by 0.25: 4 * 0.25 = 1 point.
+So, in the second 20 minutes, he scores 4 + 1 = 5 points.
+In total, Mike scores 4 + 5 = 9 points in the 40 minutes.
+The answer is 9
+nfe:  45
+avg nfe:  46.30555555555556
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.3508s tail_wait=0.3753s finished=True
+Generating...:  27%|██▋       | 36/132 [01:42<03:48,  2.38s/it]====================
+answer:  Terry eats 2 yogurts a day, so he eats 2 x 30 = 60 yogurts in 30 days.
+The yogurts are on sale at 4 yogurts for $5.00, so each yogurt costs $5.00 / 4 = $1.25.
+Therefore, Terry spends 60 x $1.25 = $<<60*1.25=75.00>>75.00 on yogurt over 30 days.
+#### 75
+nfe:  39
+avg nfe:  46.108108108108105
+====================
+
+[timing] sample=0 eos_step=7 eos_time=2.1680s tail_wait=0.1891s finished=True
+Generating...:  28%|██▊       | 37/132 [01:45<03:45,  2.37s/it]Generating...:  28%|██▊       | 37/132 [01:45<04:30,  2.85s/it]
+Traceback (most recent call last):
+  File "/home/work/yhgo/Fast-dLLM/llada/eval_llada.py", line 483, in <module>
+    cli_evaluate()
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/__main__.py", line 389, in cli_evaluate
+    results = evaluator.simple_evaluate(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/utils.py", line 422, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/evaluator.py", line 308, in simple_evaluate
+    results = evaluate(
+              ^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/utils.py", line 422, in _wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/lm_eval/evaluator.py", line 528, in evaluate
+    resps = getattr(lm, reqtype)(cloned_reqs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/eval_llada.py", line 388, in generate_until
+    generated_answer, nfe = generate_with_dual_cache(self.model, input_ids, steps=self.steps, gen_length=self.gen_length, block_length=self.block_length, 
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/generate.py", line 275, in generate_with_dual_cache
+    logits = model(x[:, current_block_start:current_block_end], past_key_values=past_key_values, use_cache=True, replace_position=replace_position).logits
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1740, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1751, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/model/modeling_llada.py", line 1588, in forward
+    outputs = self.model.forward(
+              ^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/model/modeling_llada.py", line 1485, in forward
+    x, cache = block(x, attention_bias=attention_bias, layer_past=layer_past, use_cache=use_cache,replace_position=replace_position)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1740, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1751, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/model/modeling_llada.py", line 972, in forward
+    att, cache = self.attention(q, k, v, attention_bias, layer_past=layer_past, use_cache=use_cache,replace_position=replace_position)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/model/modeling_llada.py", line 755, in attention
+    q, k = self.rotary_emb(q, k, max_replace_pos)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1740, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1751, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/yhgo/Fast-dLLM/llada/model/modeling_llada.py", line 454, in forward
+    pos_sin[:, :, block_end_index.item() - query_len : block_end_index.item(), :],
+                  ^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/usr/lib/python3.12/subprocess.py", line 1264, in wait
+    return self._wait(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2053, in _wait
+    (pid, sts) = self._try_wait(0)
+                 ^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/subprocess.py", line 2011, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/work/.local/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/home/work/.local/lib/python3.12/site-packages/accelerate/commands/accelerate_cli.py", line 48, in main
+    args.func(args)
+  File "/home/work/.local/lib/python3.12/site-packages/accelerate/commands/launch.py", line 1174, in launch_command
+    simple_launcher(args)
+  File "/home/work/.local/lib/python3.12/site-packages/accelerate/commands/launch.py", line 766, in simple_launcher
+    process.wait()
+  File "/usr/lib/python3.12/subprocess.py", line 1277, in wait
+    self._wait(timeout=sigint_timeout)
+  File "/usr/lib/python3.12/subprocess.py", line 2047, in _wait
+    time.sleep(delay)
+KeyboardInterrupt

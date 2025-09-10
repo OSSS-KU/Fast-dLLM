@@ -1,0 +1,2 @@
+{"prompt": "Lily can run 12 km/h for 4 hours. Then 6 km/h. How many kilometers in 8 hours?", "stop": ["</s>", "###"]}
+{"prompt": "What is 17 * 19?", "stop": ["</s>"]}

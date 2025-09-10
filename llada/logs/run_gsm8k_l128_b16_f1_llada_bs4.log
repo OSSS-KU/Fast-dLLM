@@ -1,0 +1,1778 @@
+The following values were not passed to `accelerate launch` and had defaults used instead:
+	`--num_processes` was set to a value of `1`
+	`--num_machines` was set to a value of `1`
+	`--mixed_precision` was set to a value of `'no'`
+	`--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+2025-08-29:15:06:50,049 WARNING  [lm_eval.__main__:316]  --limit SHOULD ONLY BE USED FOR TESTING.REAL METRICS SHOULD NOT BE COMPUTED USING LIMIT.
+2025-08-29:15:06:50,051 INFO     [lm_eval.__main__:379] Selected Tasks: ['gsm8k']
+2025-08-29:15:06:50,054 INFO     [lm_eval.evaluator:169] Setting random seed to 0 | Setting numpy seed to 1234 | Setting torch manual seed to 1234 | Setting fewshot manual seed to 1234
+2025-08-29:15:06:50,054 INFO     [lm_eval.evaluator:206] Initializing llada_dist model, with arguments: {'model_path': 'GSAI-ML/LLaDA-8B-Instruct', 'gen_length': 128, 'steps': 8, 'block_length': 16, 'use_cache': True, 'dual_cache': True, 'factor': 1.0, 'show_speed': True}
+[yhgo] batch size = 4
+The argument `trust_remote_code` is to be used with Auto classes. It has no effect here and is ignored.
+Loading checkpoint shards:   0%|          | 0/6 [00:00<?, ?it/s]Loading checkpoint shards:  17%|█▋        | 1/6 [00:00<00:01,  3.56it/s]Loading checkpoint shards:  33%|███▎      | 2/6 [00:00<00:00,  4.04it/s]Loading checkpoint shards:  50%|█████     | 3/6 [00:00<00:00,  4.12it/s]Loading checkpoint shards:  67%|██████▋   | 4/6 [00:00<00:00,  4.29it/s]Loading checkpoint shards:  83%|████████▎ | 5/6 [00:01<00:00,  4.31it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.41it/s]Loading checkpoint shards: 100%|██████████| 6/6 [00:01<00:00,  4.26it/s]
+2025-08-29:15:07:03,335 WARNING  [lm_eval.evaluator:275] Overwriting default num_fewshot of gsm8k from 5 to 1
+2025-08-29:15:07:03,335 INFO     [lm_eval.api.task:420] Building contexts for gsm8k on rank 0...
+  0%|          | 0/132 [00:00<?, ?it/s] 55%|█████▍    | 72/132 [00:00<00:00, 713.07it/s]100%|██████████| 132/132 [00:00<00:00, 680.14it/s]
+2025-08-29:15:07:03,534 INFO     [lm_eval.evaluator:517] Running generate_until requests
+Batching...:   0%|          | 0/132 [00:00<?, ?it/s]Batching...: 100%|██████████| 132/132 [00:00<00:00, 1797558.86it/s]
+Generating...:   0%|          | 0/33 [00:00<?, ?it/s]====================
+answer:  Janet's ducks lay 16 eggs per day. She eats 3 eggs for breakfast and bakes 4 eggs for her friends, so she uses a total of 3 + 4 = 7 eggs per day.
+
+The remaining eggs are 16 - 7 = 9 eggs.
+
+She sells these 9 eggs at the farmers' market for $2 each, so she makes 9 * $2 = $18 per day.
+
+Therefore, Janet makes $18 every day at the farmers' market.
+nfe:  66
+avg nfe:  66.0
+====================
+
+====================
+answer:  The robe takes 2 bolts of blue fiber and half that much white fiber. 
+Half of 2 bolts is 2/2 = 1 bolt.
+So, the total number of bolts is 2 bolts of blue fiber + 1 bolt of white fiber = 3 bolts.
+#### 3
+nfe:  66
+avg nfe:  66.0
+====================
+
+====================
+answer:  The new value of the house is $80,000 + $50,000 = $130,000.
+The repairs increased the value by 150%, so the new value is $130,000 * 1.5 = $195,000.
+The profit is the difference between the new value and the original price, so it is $195,000 - $80,000 = $115,000.
+#### 115,000
+nfe:  66
+avg nfe:  66.0
+====================
+
+====================
+answer:  James runs 3 sprints each time, and each sprint is 60 meters long. So, he runs 3 * 60 = <<3*60=180>>180 meters each time.
+He runs this 3 times a week, so in total, he runs 180 * 3 = <<180*3=540>>540 meters a week.
+Therefore, James runs 540 meters a week.
+nfe:  66
+avg nfe:  66.0
+====================
+
+[timing] sample=0 block_step=8 block_time=7.0724s tail_wait=0.0052s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=6.913179671391845 pref=6.993696691468358 block=7.072370691224933
+[timing] sample=1 block_step=4 block_time=4.9308s tail_wait=2.1468s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=4.930807627737522 pref=4.930807627737522 block=4.930807627737522
+[timing] sample=2 block_step=8 block_time=7.0724s tail_wait=0.0052s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.993696691468358 pref=7.072370691224933 block=7.072370691224933
+[timing] sample=3 block_step=7 block_time=6.6310s tail_wait=0.4466s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.460742294788361 pref=6.630954897031188 block=6.630954897031188
+Generating...:   3%|▎         | 1/33 [00:07<03:47,  7.10s/it]====================
+answer:  Wendi has a total of 20 chickens x 3 cups per chicken = <<20*3=60>>60 cups of feed to feed her chickens in a day.
+She has already given her chickens 15 cups in the morning + 25 cups in the afternoon = <<15+25=40>>40 cups of feed.
+Therefore, she needs to give her chickens 60 cups - 40 cups = <<60-40=20>>20 cups of feed in the final meal of the day.
+Result: 20
+nfe:  73
+avg nfe:  69.5
+====================
+
+====================
+answer:  The first 8 glasses cost $5 each, so 8 * $5 = $40.
+The next 8 glasses cost 60% of $5 each, so 8 * ($5 * 0.6) = $24.
+Therefore, Kylar needs to pay $40 + $24 = $64 for the 16 glasses.
+#### 64
+nfe:  73
+avg nfe:  69.5
+====================
+
+====================
+answer:  If Seattle has 20 sheep, then Charleston has 4 * 20 = <<4*20=80>>80 sheep.
+Toulouse has twice as many sheep as Charleston, so Toulouse has 2 * 80 = <<2*80=160>>160 sheep.
+Together, Toulouse, Charleston, and Seattle have 160 + 80 + 20 = <<160+80+20=260>>260 sheep.
+#### 260Answer achieved: 260
+nfe:  73
+avg nfe:  69.5
+====================
+
+====================
+answer:  Carla can download 2 GB/minute, so it will take 200 GB / 2 GB/minute = 100 minutes to download the file normally.
+However, 40% of the way through the download, she has to restart, which takes 20 minutes.
+So, the total time to download the file is 100 minutes + 20 minutes = 120 minutes.
+Therefore, it takes 120 minutes to download the 200 GB file.
+#### 120
+The answer is: 120
+nfe:  73
+avg nfe:  69.5
+====================
+
+[timing] sample=0 block_step=10 block_time=7.2710s tail_wait=0.0902s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=7.0301663391292095 pref=7.270956572145224 block=7.270956572145224
+[timing] sample=1 block_step=6 block_time=5.7069s tail_wait=1.6543s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.540609581395984 pref=5.706858327612281 block=5.706858327612281
+[timing] sample=2 block_step=11 block_time=7.3562s tail_wait=0.0050s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=7.110864555463195 pref=7.356213375926018 block=7.356213375926018
+[timing] sample=3 block_step=10 block_time=7.2710s tail_wait=0.0902s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=7.0301663391292095 pref=7.270956572145224 block=7.270956572145224
+Generating...:   6%|▌         | 2/33 [00:14<03:44,  7.26s/it]====================
+answer:  John drives for 3 hours at 60 mph, so he covers 3 * 60 = 180 miles.
+He then spends 2 hours in standstill traffic, so he doesn't cover any distance during that time.
+He spends the next half-hour driving at 30 mph, so he covers 0.5 * 30 = 15 miles.
+Finally, he drives the remaining 1 hour at 80 mph, so he covers 1 * 80 = 80 miles.
+Therefore, John is 275 miles from home.
+nfe:  58
+avg nfe:  65.66666666666667
+====================
+
+====================
+answer:  Eliza's regular pay for the first 40 hours is $10/hour * 40 hours = $400.
+Her overtime pay is 1.2 times her regular hourly rate, so 1.2 * $10/hour = $12/hour.
+She worked 5 hours of overtime, so her overtime pay is $12/hour * 5 hours = $60.
+Therefore, her total earnings for the week are $400 + $60 = $<<400+60=460>>460.
+#### 460
+nfe:  58
+avg nfe:  65.66666666666667
+====================
+
+====================
+answer:  In the second month, the program had 3 * 60 = 180 downloads.
+In the third month, the number of downloads reduced by 30%, so it was 180 - (30/100) * 180 = 180 - 54 = 126 downloads.
+Therefore, the total number of downloads over the three months is 60 + 180 + 126 = <<60+180+126=366>>366.
+#### 366
+nfe:  58
+avg nfe:  65.66666666666667
+====================
+
+====================
+answer:  Toula bought 3 dozen donuts at $68 per dozen, so the cost of the donuts is 3 * $68 = $204. She also bought 2 dozen mini cupcakes at $80 per dozen, so the cost of the mini cupcakes is 2 * $80 = $160. And 6 dozen mini cheesecakes at $55 per dozen, so the cost of the mini cheesecakes is 6 * $55 = $330. The total cost is $204 + $160 + $330 = $
+nfe:  58
+avg nfe:  65.66666666666667
+====================
+
+[timing] sample=0 block_step=10 block_time=5.8819s tail_wait=0.0066s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.63177715241909 pref=5.8819018714129925 block=5.8819018714129925
+[timing] sample=1 block_step=8 block_time=5.8885s tail_wait=0.0000s finished=False
+[timing] sample=1 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=2 block_step=8 block_time=5.8885s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=9 block_time=5.8020s tail_wait=0.0865s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.721491390839219 pref=5.802002297714353 block=5.802002297714353
+Generating...:   9%|▉         | 3/33 [00:20<03:19,  6.63s/it]====================
+answer:  Each year, Carlos will earn 7 lemons x $1.5 = $10 from selling the lemons.
+However, he will also spend $3 each year to water and feed the tree.
+So, he will earn $10 - $3 = $7 each year.
+To earn money on the lemon tree, Carlos needs to cover the initial cost of planting the tree.
+He needs to earn $90, and he earns $7 each year.
+So, it will take him $90 / $7 = 13 years to cover the initial cost.
+#### 13
+nfe:  75
+avg nfe:  68.0
+====================
+
+====================
+answer:  Let x be the number of vacuum cleaners Melanie started with.
+She sold 1/3x at the green house, so she had 2/3x left.
+She sold 2 more at the red house, so she had 2/3x - 2 left.
+She sold half of what was left at the orange house, so she had 1/3x - 1 left.
+We know that she has 5 vacuum cleaners left, so 1/3x - 1 = 5.
+Solving for x gives us x = 18.
+#### 18
+nfe:  75
+avg nfe:  68.0
+====================
+
+====================
+answer:  20% of 20 students is 0.2 * 20 = 4 students enrolled in contemporary dance.
+So, 20 - 4 = 16 students remain.
+25% of 16 students is 0.25 * 16 = 4 students enrolled in jazz dance.
+Therefore, 16 - 4 = 12 students are enrolled in hip-hop dance.
+The percentage of students enrolled in hip-hop dance is (12 / 20) * 100% = 60%.
+#### 60
+nfe:  75
+avg nfe:  68.0
+====================
+
+====================
+answer:  The profit from the jewelry would be $5,000 x 2.5% = $<<5000*2.5/100=125>>125.
+The profit from the electronic gadgets would be $8,000 x 1.2% = $<<8000*1.2/100=96>>96.
+Therefore, the merchant would make a profit of $125 + $96 = $<<125+96=221>>221.
+Solution: 221
+nfe:  75
+avg nfe:  68.0
+====================
+
+[timing] sample=0 block_step=9 block_time=7.1049s tail_wait=0.0848s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=7.0223871394991875 pref=7.10488273575902 block=7.10488273575902
+[timing] sample=1 block_step=8 block_time=7.1897s tail_wait=0.0000s finished=False
+[timing] sample=1 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=2 block_step=8 block_time=7.0224s tail_wait=0.1673s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.939300546422601 pref=7.0223871394991875 block=7.0223871394991875
+[timing] sample=3 block_step=10 block_time=7.1841s tail_wait=0.0056s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.84609835408628 pref=7.18405089341104 block=7.18405089341104
+Generating...:  12%|█▏        | 4/33 [00:27<03:18,  6.86s/it]====================
+answer:  To find the total distance covered by each train in the two days, we need to add the distances traveled on each day.
+
+On the first day, each train travels 80 miles westward.
+On the second day, each train travels 150 miles northward.
+
+So, the total distance covered by each train in the two days is:
+
+80 miles (first day) + 150 miles (second day) = 230 miles
+
+Therefore, each train covers a total distance of 230 miles in the two days.
+nfe:  63
+avg nfe:  67.0
+====================
+
+====================
+answer:  Jill earns $20 per hour for teaching, so she earns $20/hour * 35 hours/week = $700 per week.
+Jill earns $30 per hour for coaching, so she earns $30/hour * 15 hours/week = $450 per week.
+In total, Jill earns $700 + $450 = $1150 per week.
+Since she works 50 weeks a year, her annual salary is $1150 * 50 = $57500.
+#### 57500
+nfe:  63
+avg nfe:  67.0
+====================
+
+====================
+answer:  Claire makes a 3 egg omelet every morning, so in one week, she eats 3 eggs/day x 7 days/week = 21 eggs/week.
+In 4 weeks, she will eat 21 eggs/week x 4 weeks = 84 eggs.
+To convert eggs to dozens, we divide by 12: 84 eggs / 12 eggs/dozen = 7 dozens.
+Therefore, Claire will eat 7 dozens of eggs in 4 weeks.
+#### 7
+nfe:  63
+avg nfe:  67.0
+====================
+
+====================
+answer:  She has 6 miles left to walk because 12 - 4 = <<12-4=6>>6
+She has 2 hours left to walk this distance because 1 + 1 = <<1+1=2>>2
+She needs to walk at a pace of 3 miles per hour because 6 / 2 = <<6/2=3>>3
+#### 3
+nfe:  63
+avg nfe:  67.0
+====================
+
+[timing] sample=0 block_step=7 block_time=5.9127s tail_wait=0.0051s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.832142723724246 pref=5.912688333541155 block=5.912688333541155
+[timing] sample=1 block_step=8 block_time=5.9178s tail_wait=0.0000s finished=False
+[timing] sample=1 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=2 block_step=7 block_time=5.3410s tail_wait=0.5768s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.177508028224111 pref=5.340981340035796 block=5.340981340035796
+[timing] sample=3 block_step=6 block_time=4.8482s tail_wait=1.0696s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=4.756934970617294 pref=4.756934970617294 block=4.848243979737163
+Generating...:  15%|█▌        | 5/33 [00:33<03:02,  6.52s/it]====================
+answer:  The orange drink is 10 liters x 2/3 = 6 liters of water.
+The pineapple drink is 15 liters x 3/5 = 9 liters of water.
+The total amount of water in the two drinks is 6 liters + 9 liters = 15 liters.
+After spilling one liter of the orange drink, the remaining amount of water is 6 liters - 1 liter = 5 liters.
+The total amount of water in the remaining 24 liters is 5 liters + 9 liters = 14 liters.
+Solution: 14
+nfe:  63
+avg nfe:  66.33333333333333
+====================
+
+====================
+answer:  If Samantha is currently 31 years old, and Raymond was born 6 years before Samantha, then Raymond is currently:
+
+\[ 31 - 6 = 25 \text{ years old} \]
+
+Raymond had a son at the age of 23. To find out how many years ago Raymond's son was born, we subtract the age of Raymond when he had his son from Raymond's current age:
+
+\[ 25 - 23 = 2 \text{ years} \]
+
+So, Raymond's son was born approximately 2 years ago.
+nfe:  63
+avg nfe:  66.33333333333333
+====================
+
+====================
+answer:  First, find the total number of DVDs bought by the first 3 customers: 3 customers * 1 DVD/customer = 3 DVDs
+Next, find the total number of DVDs bought by the next 2 customers: 2 customers * 2 DVDs/customer = 4 DVDs
+Then, find the total number of DVDs bought by the last 3 customers: 3 customers * 0 DVDs/customer = 0 DVDs
+Finally, add up all the DVDs bought by all the customers to find the total: 3 DVDs + 4 DVDs + 0 DVDs = 7 DVDs
+#### 7
+nfe:  63
+avg nfe:  66.33333333333333
+====================
+
+====================
+answer:  The candle melts by 2 centimeters every hour. From 1:00 PM to 5:00 PM is a period of 4 hours.
+
+To find out how many centimeters shorter the candle will be, we multiply the number of hours by the rate of melting per hour:
+
+\[ 4 \text{ hours} \times 2 \text{ cm/hour} = 8 \text{ cm} \]
+
+Therefore, the candle will be 8 centimeters shorter after burning from 1:00 PM to 5:00 PM.
+
+Answer: 8 centimeters
+nfe:  63
+avg nfe:  66.33333333333333
+====================
+
+[timing] sample=0 block_step=10 block_time=6.2890s tail_wait=0.0825s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=6.209855994209647 pref=6.28897212818265 block=6.28897212818265
+[timing] sample=1 block_step=9 block_time=6.2099s tail_wait=0.1617s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.957570601254702 pref=6.209855994209647 block=6.209855994209647
+[timing] sample=2 block_step=7 block_time=5.9576s tail_wait=0.4139s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.957570601254702 pref=5.957570601254702 block=5.957570601254702
+[timing] sample=3 block_step=11 block_time=6.3672s tail_wait=0.0043s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.957570601254702 pref=6.36721670627594 block=6.36721670627594
+Generating...:  18%|█▊        | 6/33 [00:39<02:54,  6.47s/it]====================
+answer:  Let x be the original price of the book.
+The discount is 25%, so Kyle paid 75% of the original price.
+The equation representing this situation is 0.75x = $19.50.
+To find the original price, we need to solve for x.
+Divide both sides of the equation by 0.75:
+x = $19.50 / 0.75
+x = $26.00
+The original price of the book was $26.00.
+#### 26.00
+nfe:  57
+avg nfe:  65.0
+====================
+
+====================
+answer:  The cost of the chicken meal is $12.
+The cost of the 5 packs of milk is 5 x $3 = $15.
+The cost of the 4 apples is 4 x $1.50 = $6.
+The total cost of the chicken meal, milk, and apples is $12 + $15 + $6 = $33.
+So, the cost of the pizzas is $50 - $33 = $17.
+Marie ordered $17 / $8.50 = 2 boxes of pizza.
+#### 2
+nfe:  57
+avg nfe:  65.0
+====================
+
+====================
+answer:  Mishka spent $49.50 on shorts because 3 x $16.50 = $49.50.
+She spent $67.50 on pants because 3 x $22.50 = $67.50.
+She spent $126 on shoes because 3 x $42 = $126.
+She spent a total of $343 on all the clothing items because $49.50 + $67.50 + $126 = $343.
+#### 343
+nfe:  57
+avg nfe:  65.0
+====================
+
+====================
+answer:  Cynthia eats one serving of ice cream every night, so in 60 days, she will eat 60 servings.
+Each carton contains 15 servings, so she will need 60 / 15 = 4 cartons.
+Each cartonEach carton costs $4.00, so she will spend 4 * $4.00 = $16.00 on ice cream.
+#### 16.00
+nfe:  57
+avg nfe:  65.0
+====================
+
+[timing] sample=0 block_step=9 block_time=5.2490s tail_wait=0.0056s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.09174688346684 pref=5.249022034928203 block=5.249022034928203
+[timing] sample=1 block_step=7 block_time=5.0031s tail_wait=0.2514s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.003135966137052 pref=5.003135966137052 block=5.003135966137052
+[timing] sample=2 block_step=8 block_time=5.2546s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=6 block_time=4.6944s tail_wait=0.5602s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=4.604693604633212 pref=4.694396322593093 block=4.694396322593093
+Generating...:  21%|██        | 7/33 [00:45<02:37,  6.07s/it]====================
+answer:  Henry's first stop was after 20 miles, and his second stop was 15 miles before the end of the trip. The total distance of the trip is 60 miles.
+
+To find the distance between his first and second stops, we subtract the distance of the first stop from the distance of the second stop:
+
+\[ 15 \text{ miles} - 20 \text{ miles} = 5 \text{ miles} \]
+
+Therefore, Henry traveled 5 miles between his first and second stops.
+
+\[ 5 \text{ miles} \]
+nfe:  65
+avg nfe:  65.0
+====================
+
+====================
+answer:  Let B be the cost of the boots.
+The first pair of heels costs $33.
+The second pair of heels costs 2 * $33 = $66.
+The total cost of the heels is $33 + $66 = $99.
+According to the problem, the total cost of the heels is $5 less than the cost of the boots.
+So, $99 = B - $5.
+Adding $5 to both sides, we get B = $104.
+Therefore, the boots cost $104.
+#### 104
+nfe:  65
+avg nfe:  65.0
+====================
+
+====================
+answer:  The ratio of their ages is 7:11, so the total ratio is 7 + 11 = 18.
+Their total age now is 162, so each part of the ratio represents 162 / 18 = 9 years.
+Allen's current age is 11 parts, so Allen's current age is 11 * 9 = 99 years.
+In 10 years, Allen's age will be 99 + 10 = 99 years.
+#### 99
+The answer is: 99
+nfe:  65
+avg nfe:  65.0
+====================
+
+====================
+answer:  The first friend guesses 80 jelly beans.
+The second friend says 20 more than half the first one, which is 80/2 + 20 = 100 jelly beans.
+The third friend says 25% more than the first one, which is 80 + 25% of 80 = 100 jelly beans.
+To find the average guess, we add up all the guesses and divide by 3: (80 + 100 + 100) / 3 = 90.
+#### 90
+nfe:  65
+avg nfe:  65.0
+====================
+
+[timing] sample=0 block_step=10 block_time=6.0187s tail_wait=0.0855s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.685207037255168 pref=6.018663201481104 block=6.018663201481104
+[timing] sample=1 block_step=8 block_time=6.1042s tail_wait=0.0000s finished=False
+[timing] sample=1 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=2 block_step=11 block_time=6.0980s tail_wait=0.0062s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.856846809387207 pref=6.09795929864049 block=6.09795929864049
+[timing] sample=3 block_step=8 block_time=6.1042s tail_wait=0.0000s finished=False
+[timing] sample=3 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+Generating...:  24%|██▍       | 8/33 [00:51<02:32,  6.09s/it]====================
+answer:  John takes care of 10 dogs, and each dog takes 0.5 hours a day to walk and take care of their business. Therefore, in one day, John spends:
+
+10 dogs * 0.5 hours/dog = 5 hours/day
+
+Since there are 7 days in a week, John spends:
+
+5 hours/day * 7 days/week = 35 hours/week
+
+So, John spends 35 hours a week taking care of his dogs.
+nfe:  58
+avg nfe:  64.22222222222223
+====================
+
+====================
+answer:  Let's denote the number of silver coins as \( S \).
+
+Since there are 30 more gold coins than silver coins, the number of gold coins is \( S + 30 \).
+
+The total number of coins is 110, so:
+\[ S + (S + 30) = 110 \]
+\[ 2S + 30 = 110 \]
+\[ 2S = 80 \]
+\[ S = 40 \]
+
+Therefore, the number of gold coins is also 40.
+nfe:  58
+avg nfe:  64.22222222222223
+====================
+
+====================
+answer:  Raymond has 40 jewels.
+Aaron has 5 more jewels than half of Raymond's jewels, so Aaron has 40/2 + 5 = <<40/2+5=25>>25 jewels.
+Siobhan has 2 fewer jewels than Aaron, so Siobhan has 25 - 2 = <<25-2=23>>23 jewels.
+#### 23
+nfe:  58
+avg nfe:  64.22222222222223
+====================
+
+====================
+answer:  In the first 20 minutes, Mike scores 4 points.
+In the second 20 minutes, he scores 25% more points than in the first 20 minutes.
+To find 25% of 4 points, we multiply 4 by 0.25, which gives us 1 point.
+So, in the second 20 minutes, Mike scores 4 + 1 = 5 points.
+In total, Mike scores 4 + 5 = 9 points.
+#### 9
+nfe:  58
+avg nfe:  64.22222222222223
+====================
+
+[timing] sample=0 block_step=7 block_time=4.6300s tail_wait=1.0873s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=4.548473382368684 pref=4.630037929862738 block=4.630037929862738
+[timing] sample=1 block_step=12 block_time=5.7123s tail_wait=0.0050s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.228163301944733 pref=5.712306726723909 block=5.712306726723909
+[timing] sample=2 block_step=7 block_time=4.0966s tail_wait=1.6207s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=4.014607382938266 pref=4.096583988517523 block=4.096583988517523
+[timing] sample=3 block_step=7 block_time=5.3163s tail_wait=0.4011s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.228163301944733 pref=5.316254934296012 block=5.316254934296012
+Generating...:  27%|██▋       | 9/33 [00:56<02:23,  5.97s/it]====================
+answer:  Terry eats 2 yogurts a day, so he eats 2 x 30 = 60 yogurts in 30 days.
+The yogurts are on sale at 4 yogurts for $5.00, so he needs 60 / 4 = 15 sets of 4 yogurts.
+Each set costs $5.00, so he spends 15 x $5.00 = $<<15*5=75.00>>75.00 on yogurt over 30 days.
+#### 75
+nfe:  75
+avg nfe:  65.3
+====================
+
+====================
+answer:  John sells 13 lego sets for $15 each, so he earns 13 * $15 = $195.
+He buys 8 video games for $20 each, so he spends 8 * $20 = $160.
+He has $5 left after buying the video games, so he spent $195 - $160 - $5 = $30 on video games.
+Since he spent $30 on video games, he still has $30 / $15 = 2 lego sets left.
+#### 2
+nfe:  75
+avg nfe:  65.3
+====================
+
+====================
+answer:  John runs 3 days a week, so he runs 3 days x 3 hours = 9 hours in total.
+He runs 60 miles a week, so he runs 60 miles / 9 hours = 6 miles per hour.
+nfe:  75
+avg nfe:  65.3
+====================
+
+====================
+answer:  If Dana can skip at 3 miles per hour, then she can run at 3 * 2 = 6 miles per hour.
+If she spends one-third of the time running, then she will run for 1/3 * 6 = 2 hours.
+If she spends two-thirds of the time walking, then she will walk for 2/3 * 6 = 4 hours.
+In six hours, she can travel a total of 6 * 2 + 3 * 4 = 12 + 12 = 24 miles.
+Solution: 24
+nfe:  75
+avg nfe:  65.3
+====================
+
+[timing] sample=0 block_step=8 block_time=7.1843s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=7 block_time=6.9339s tail_wait=0.2504s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=6.933936677873135 pref=6.933936677873135 block=6.933936677873135
+[timing] sample=2 block_step=10 block_time=4.3040s tail_wait=2.8803s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=3.641773670911789 pref=4.303957615047693 block=4.303957615047693
+[timing] sample=3 block_step=10 block_time=7.1789s tail_wait=0.0054s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.933936677873135 pref=7.178913550451398 block=7.178913550451398
+Generating...:  30%|███       | 10/33 [01:04<02:26,  6.35s/it]====================
+answer:  If Suzy's iPhone is 1 year old, then Ben's iPhone is 2 * 1 = 2 years old.
+Since Ben's iPhone is two times older than Suzy's iPhone, Brandon's iPhone is 4 * 2 = 8 years old.
+Therefore, Brandon's iPhone is 8 years old.
+#### 8
+nfe:  59
+avg nfe:  64.72727272727273
+====================
+
+====================
+answer:  When Polly is not holding the gemstone, she can throw the javelin 400 feet.
+When she is holding the gemstone, she can throw the javelin three times farther, so she can throw it 400 * 3 = 1200 feet.
+The dragon's flames can reach up to 1000 feet.
+Therefore, when holding the gemstone, Polly can stand 1200 - 1000 = 200 feet outside the reach of the dragon's flames and still hit the dragon.
+#### 200
+nfe:  59
+avg nfe:  64.72727272727273
+====================
+
+====================
+answer:  Grandma Jones cut 5 apple pies into 8 pieces each, so she had a total of 5 pies * 8 pieces/pie = <<5*8=40>>40 pieces of pie.
+At the end of the evening, there were 14 pieces of pie remaining, so the guests' pieces taken were 40 pieces - 14 pieces = <<40-14=26>>26 pieces.
+Therefore, the guests took 26 pieces of pie.
+#### 26
+nfe:  59
+avg nfe:  64.72727272727273
+====================
+
+====================
+answer:  Your daily calorie target is 2000 calories, and you have already consumed 1800 calories, so you can consume 2000 - 1800 = 200 calories more.
+Each serving of chips has 250 calories, so you can eat 200 / 250 = 0.8 servings of chips.
+Since a 300g bag has 5 servings, you can eat 0.8 * 300g = 240g of chips.
+The answer is 240g
+nfe:  59
+avg nfe:  64.72727272727273
+====================
+
+[timing] sample=0 block_step=5 block_time=3.3894s tail_wait=2.5157s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=3.2227083425968885 pref=3.3893950283527374 block=3.3893950283527374
+[timing] sample=1 block_step=8 block_time=5.9051s tail_wait=0.0000s finished=False
+[timing] sample=1 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=2 block_step=7 block_time=5.4954s tail_wait=0.4098s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.4953620582818985 pref=5.4953620582818985 block=5.4953620582818985
+[timing] sample=3 block_step=11 block_time=5.9000s tail_wait=0.0051s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.4953620582818985 pref=5.900040414184332 block=5.900040414184332
+Generating...:  33%|███▎      | 11/33 [01:10<02:16,  6.21s/it]====================
+answer:  For every pound of beeswax, he can make 10 candles, so 20 candles will require 20/10 = 2 pounds of beeswax.
+One pound of beeswax costs $10.00, so 2 pounds will cost 2*$10 = $20.00.
+He sells each candle for $2.00, so 20 candles will bring in 20*$2 = $40.00.
+His total profit is $40-$20 = $20.00.
+Solution: 20
+nfe:  75
+avg nfe:  65.58333333333333
+====================
+
+====================
+answer:  On Monday, she wrote 5 articles, so she spent 5*4 = 20 hours.
+On Tuesday, she wrote 5+2/5*5 = 5+2 = 7 articles, so she spent 7*4 = 28 hours.
+On Wednesday, she wrote 2*7 = 14 articles, so she spent 14*4 = 56 hours.
+In total, she spent 20+28+56 = <<104>>84 hours writing articles in the three days.
+#### 104
+nfe:  75
+avg nfe:  65.58333333333333
+====================
+
+====================
+answer:  Candice started with 80 Post-it notes and used 220 of them on the coffee cups, so she used 220 - 23 = <<220-23=197>>197 Post-it notes.
+Since she had 80 Post-it notes in her purse and used 197 of them, she must have purchased 197 - 80 = <<197-80=117>>17 Post-it notes.
+Therefore, the package she purchased contained 17 Post-it notes.
+#### 17
+nfe:  75
+avg nfe:  65.58333333333333
+====================
+
+====================
+answer:  John bought 50/100 * 40 = $20 more expensive red ties than blue ties.
+He also bought twice as many red ties as blue ties, so he bought 2 * 10 = 20 red ties.
+The cost of the red ties is 20 * ($40 + $20) = $1000.
+The total cost of the ties is $200 + $1000 = $1200.
+Therefore, John spent $1200 on ties.
+#### 1200
+nfe:  75
+avg nfe:  65.58333333333333
+====================
+
+[timing] sample=0 block_step=8 block_time=7.4008s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=12 block_time=7.3945s tail_wait=0.0063s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=7.314036184921861 pref=7.394534261897206 block=7.394534261897206
+[timing] sample=2 block_step=8 block_time=7.4008s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=8 block_time=7.0617s tail_wait=0.3392s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.9798596780747175 pref=7.061667673289776 block=7.061667673289776
+Generating...:  36%|███▋      | 12/33 [01:17<02:18,  6.58s/it]====================
+answer:  First, we need to convert the length of the wire from feet to inches. Since there are 12 inches in a foot, we calculate:
+
+4 \text{ feet} \times 12 \text{ inches/foot} = 48 \text{ inches}
+
+Next, we divide the total length of the wire by the length of each piece to find the number of pieces:
+
+48 \text{ inches} \div 6 \text{ inches/piece} = 8 \text{ pieces}
+
+Therefore, Tracy obtained 8 pieces of wire.
+nfe:  55
+avg nfe:  64.76923076923077
+====================
+
+====================
+answer:  The total number of units in the building is 15 * 8 = <<15*8=120>>120 units.
+If 3/4 of the building is occupied, then the number of occupied units is 3/4 * 120 = <<3/4*120=90>>90 units.
+Therefore, the number of unoccupied units is 120 - 90 = <<120-90=30>>30 units.
+#### 30
+nfe:  55
+avg nfe:  64.76923076923077
+====================
+
+====================
+answer:  Lloyd's chickens produce 252 eggs per day. In a week (7 days), they produce 252 * 7 = 1764 eggs.
+
+Since there are 12 eggs in a dozen, Lloyd has 1764 / 12 = 147 dozens of eggs in a week.
+
+Lloyd sells each dozen of eggs for $2, so he makes 147 * $2 = $294 on eggs per week.
+
+Therefore, Lloyd makes $294 on eggs per week.
+#### 294
+nfe:  55
+avg nfe:  64.76923076923077
+====================
+
+====================
+answer:  Tom travels at a rate of 10 miles per hour for 3 hours, so he covers a distance of 10 * 3 = <<10*3=30>>30 miles.
+To travel back, he needs to cover the same distance, which is 30 miles.
+He travels back at a rate of 6 miles per hour, so it will take him 30 / 6 = <<30/6=5>>5 hours to get back.
+Therefore, it takes Tom 5 hours to get back.
+#### 5The final result is 5
+nfe:  55
+avg nfe:  64.76923076923077
+====================
+
+[timing] sample=0 block_step=9 block_time=5.2977s tail_wait=0.1697s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.045283572748303 pref=5.297659566625953 block=5.297659566625953
+[timing] sample=1 block_step=7 block_time=5.1373s tail_wait=0.3301s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.045283572748303 pref=5.137252114713192 block=5.137252114713192
+[timing] sample=2 block_step=8 block_time=5.4673s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=11 block_time=5.4610s tail_wait=0.0063s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.045283572748303 pref=5.460978649556637 block=5.460978649556637
+Generating...:  39%|███▉      | 13/33 [01:22<02:04,  6.24s/it]====================
+answer:  Uriah needs to remove 15 pounds from his book bag. He removes 30 comic books, each weighing 1/4 pound, so the total weight of the comic books is 30 * (1/4) = 7.5 pounds.
+
+To remove the remaining weight, he needs to remove 15 pounds - 7.5 pounds = 7.5 pounds.
+
+Since each toy weighs 1/2 pound, the number of toys he needs to remove is 7.5 pounds / (1/2) = 15 toys.
+#### 15
+nfe:  66
+avg nfe:  64.85714285714286
+====================
+
+====================
+answer:  On Thursday, the mechanic earns $60 * 6 truck tires = $360 from truck tires and $40 * 4 car tires = $160 from car tires, for a total of $360 + $160 = $520.
+On Friday, the mechanic earns $40 * 12 car tires = $480 from car tires, for a total of $480.
+The mechanic earned $520 - $480 = $40 more on Thursday, the day with higher revenue.
+Solution: 40
+nfe:  66
+avg nfe:  64.85714285714286
+====================
+
+====================
+answer:  The Doubtfire sisters initially adopted 7 kittens from the shelter.
+
+Patchy, the first cat, has had thrice the number of adopted kittens, so Patchy has had 3 * 7 = 21 kittens.
+
+Trixie, the other cat, has had 12 kittens.
+
+To find the total number of kittens the Doubtfire family now has, we add the adopted kittens to the kittens from Patchy and Trixie:
+
+7 + 21 + 12 = 40 kittens
+
+The family now has 40 kittens.
+nfe:  66
+avg nfe:  64.85714285714286
+====================
+
+====================
+answer:  Jean has 30 lollipops and eats 2 of them, so she has:
+\[ 30 - 2 = 28 \text{ lollipops left} \]
+
+Jean wants to package 2 lollipops in each bag. To find out how many bags she can fill, we divide the number of lollipops left by the number of lollipops per bag:
+\[ \frac{28}{2} = 14 \text{ bags} \]
+
+So, Jean can fill 14 bags with the 28 lollipops.
+nfe:  66
+avg nfe:  64.85714285714286
+====================
+
+[timing] sample=0 block_step=8 block_time=6.1759s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=12 block_time=5.9262s tail_wait=0.2497s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.5122225768864155 pref=5.926238935440779 block=5.926238935440779
+[timing] sample=2 block_step=15 block_time=6.1708s tail_wait=0.0051s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.594992892816663 pref=6.170782849192619 block=6.170782849192619
+[timing] sample=3 block_step=10 block_time=5.7668s tail_wait=0.4091s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.428032301366329 pref=5.766803253442049 block=5.766803253442049
+Generating...:  42%|████▏     | 14/33 [01:29<01:58,  6.22s/it]====================
+answer:  To determine how many times Peter can go to the movies, we need to calculate the total cost of one movie visit and then divide his total budget by that amount.
+
+The cost of one movie ticket is $7, and the cost of popcorn is also $7. Therefore, the total cost for one movie visit is $7 + $7 = $14.
+
+Peter has $42 for the week. To find out how many times he can go to the movies, we divide $42 by $14:
+
+$42 / $14 = 3
+
+#### 3
+nfe:  61
+avg nfe:  64.6
+====================
+
+====================
+answer:  The combined weight of the driver and the empty truck is 3755 pounds, so the remaining weight that the truck can carry is 5000 - 3755 = 1245 pounds.
+Each box weighs 15 pounds, so the maximum number of boxes that can be loaded onto the truck is 1245 / 15 = 83 boxes.
+Therefore, the maximum number of boxes that can be loaded onto the truck while not exceeding the bridge's weight limit is 83.
+#### 83
+The answer is: 83
+nfe:  61
+avg nfe:  64.6
+====================
+
+====================
+answer:  The delivery fee is 25% of $40.00, which is $40.00 * 0.25 = $10.00
+The delivery fee is $3.00, so the total delivery fee is $10.00 + $3.00 = $13.00
+The tip is $4.00, so the final price of Stephen's groceries is $40.00 + $13.00 + $4.00 = $57.00
+The final result is 57
+nfe:  61
+avg nfe:  64.6
+====================
+
+====================
+answer:  To find the total number of raspberries, we need to add the number of raspberries in the clusters to the number of individual raspberries scattered across the bush.
+
+First, calculate the number of raspberries in the clusters:
+\[ 6 \text{ clusters} \times 20 \text{ fruit per cluster} = 120 \text{ raspberries} \]
+
+Next, add the individual raspberries scattered across the bush:
+\[ 120 + 67 = 187 \]
+
+So, the total number of raspberries is \( \boxed{187} \).
+nfe:  61
+avg nfe:  64.6
+====================
+
+[timing] sample=0 block_step=8 block_time=6.0651s tail_wait=0.2492s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.982449360191822 pref=6.065078655257821 block=6.065078655257821
+[timing] sample=1 block_step=9 block_time=6.1459s tail_wait=0.1683s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.8989386316388845 pref=6.1459256913512945 block=6.1459256913512945
+[timing] sample=2 block_step=11 block_time=6.3100s tail_wait=0.0042s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.982449360191822 pref=6.310027454048395 block=6.310027454048395
+[timing] sample=3 block_step=8 block_time=6.0651s tail_wait=0.2492s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.8989386316388845 pref=6.065078655257821 block=6.065078655257821
+Generating...:  45%|████▌     | 15/33 [01:35<01:52,  6.25s/it]====================
+answer:  Out of the 25 oranges, 1 is bad, 20% are unripe, which is 20/100 * 25 = 5 unripe oranges, and 2 are sour.
+
+So, the total number of bad, unripe, and sour oranges is 1 + 5 + 2 = 8 oranges.
+
+Therefore, the number of good oranges is the total number of oranges minus the number of bad, unripe, and sour oranges, which is 25 - 8 = 17 good oranges.
+
+#### 17
+nfe:  64
+avg nfe:  64.5625
+====================
+
+====================
+answer:  Janet pays $500 for the material and $800 for the jeweler to construct the brooch, so that's $500 + $800 = $1300.
+She then pays 10% of that amount to get it insured, which is 10/100 * $1300 = $130.
+So the total amount she paid is $1300 + $130 = $<<1300+130=1430>>1430.
+#### 1430
+nfe:  64
+avg nfe:  64.5625
+====================
+
+====================
+answer:  If Marcy quits after 30 years, she will receive 5% of the value of her pension per year.
+
+The total value of her pension after 30 years would be $50,000/year * 30 years = $1,500,000.
+
+Since she is entitled to 5% of this value per year, her annual pension would be $1,500,000 * 5% = $75,000.
+
+Therefore, her annual pension would be $75,000.
+nfe:  64
+avg nfe:  64.5625
+====================
+
+====================
+answer:  For the first half of the year, Aleena paid $140/month x 6 months = $840.
+For the second half of the year, she paid $140 - (10% of $140) = $140 - $14 = $126 per month.
+So, she paid $126/month x 6 months = $756 for the second half of the year.
+In total, she paid $840 + $756 = $1596.
+#### 1596
+nfe:  64
+avg nfe:  64.5625
+====================
+
+[timing] sample=0 block_step=8 block_time=6.6077s tail_wait=0.0820s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=6.607670269906521 pref=6.607670269906521 block=6.607670269906521
+[timing] sample=1 block_step=7 block_time=6.4354s tail_wait=0.2543s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=6.43538124859333 pref=6.43538124859333 block=6.43538124859333
+[timing] sample=2 block_step=7 block_time=6.5192s tail_wait=0.1705s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.43538124859333 pref=6.519172364845872 block=6.519172364845872
+[timing] sample=3 block_step=9 block_time=6.6858s tail_wait=0.0039s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.43538124859333 pref=6.685751697048545 block=6.685751697048545
+Generating...:  48%|████▊     | 16/33 [01:42<01:48,  6.39s/it]====================
+answer:  First, determine how many miles Sophia can drive on 1 gallon of gas:
+
+100 miles / 4 gallons = 25 miles per gallon
+
+Next, calculate how many miles she can drive on a full tank of gas:
+
+25 miles per gallon * 12 gallons = 300 miles
+
+Therefore, Sophia can drive 300 miles on a single tank of gas.
+nfe:  56
+avg nfe:  64.05882352941177
+====================
+
+====================
+answer:  Jim spends 2 hours watching TV and reads for half as long, which is 2/2 = 1 hour.
+So, in one day, he spends 2 + 1 = 3 hours on TV and reading.
+He does this 3 times a week, so in one week, he spends 3 x 3 = 9 hours on TV and reading.
+In 4 weeks, he spends 9 x 4 = 36 hours on TV and reading.
+Therefore, Jim spends 36 hours on TV and reading in 4 weeks.
+Solution: 36
+nfe:  56
+avg nfe:  64.05882352941177
+====================
+
+====================
+answer:  First, find the total number of players in each team: 5 players + 1 coach = 6 players
+Then, find the total number of people in each school: 6 players/team * 2 teams = 12 people
+Finally, find the total number of people in all four schools: 12 people/school * 4 schools = 48 people
+#### 48
+nfe:  56
+avg nfe:  64.05882352941177
+====================
+
+====================
+answer:  There were 175 diamonds.
+There were 35 fewer rubies than diamonds, so there were 175 - 35 = 140 rubies.
+There were twice the number of emeralds than rubies, so there were 140 x 2 = 280 emeralds.
+In total, there were 175 + 140 + 280 = 595 gems in the chest.
+#### 595
+nfe:  56
+avg nfe:  64.05882352941177
+====================
+
+[timing] sample=0 block_step=5 block_time=4.5799s tail_wait=1.3811s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=4.496452905237675 pref=4.496452905237675 block=4.579896939918399
+[timing] sample=1 block_step=9 block_time=5.9568s tail_wait=0.0042s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.800493774935603 pref=5.956811532378197 block=5.956811532378197
+[timing] sample=2 block_step=6 block_time=4.6623s tail_wait=1.2987s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=4.496452905237675 pref=4.662287225946784 block=4.662287225946784
+[timing] sample=3 block_step=10 block_time=5.4752s tail_wait=0.4858s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.396247768774629 pref=5.396247768774629 block=5.475209034979343
+Generating...:  52%|█████▏    | 17/33 [01:48<01:40,  6.26s/it]====================
+answer:  If there are 60 girls, and there are twice as many boys as girls, then there are 2 * 60 = 120 boys.
+The total number of students is 60 girls + 120 boys = 180 students.
+If there are 5 students to every teacher, then the number of teachers is 180 / 5 = 36 teachers.
+Therefore, there are 36 teachers at Dr. Wertz's school.
+#### 36
+nfe:  50
+avg nfe:  63.27777777777778
+====================
+
+====================
+answer:  Let's denote the amount of money Bailey started with as \( x \).
+
+She receives a weekly allowance of $5 for 8 weeks, so she receives a total of \( 5 \times 8 = 40 \) dollars.
+
+At the end of the 8 weeks, she has a total of $100. Therefore, we can write the equation:
+
+\[ x + 40 = 100 \]
+
+Subtracting 40 from both sides:
+
+\[ x = 60 \]
+
+So, Bailey started with $60.
+nfe:  50
+avg nfe:  63.27777777777778
+====================
+
+====================
+answer:  Judy teaches 5 dance classes every weekday for 5 days, so she teaches a total of 5 * 5 = 25 classes during the weekdays.
+She also teaches 8 classes on Saturday.
+In total, she teaches 25 + 8 = 33 classes in a week.
+Each class has 15 students, so she teaches 33 * 15 = 495 students in a week.
+She charges $15.00 per student, so she makes 495 * $15 = $7425 in a week.
+nfe:  50
+avg nfe:  63.27777777777778
+====================
+
+====================
+answer:  To determine the total number of instructions Kelian has to read, we need to add the instructions from both recipes.
+
+1. The first recipe has 20 instructions.
+2. The second recipe has twice as many instructions as the first one, so it has \( 2 \times 20 = 40 \) instructions.
+
+Now, we add the instructions from both recipes:
+\[ 20 + 40 = 60 \]
+
+Therefore, Kelian has to read a total of 60 instructions to prepare the two dishes.
+
+Answer: 60
+nfe:  50
+avg nfe:  63.27777777777778
+====================
+
+[timing] sample=0 block_step=7 block_time=5.1543s tail_wait=0.1729s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.154299654066563 pref=5.154299654066563 block=5.154299654066563
+[timing] sample=1 block_step=7 block_time=5.1543s tail_wait=0.1729s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.154299654066563 pref=5.154299654066563 block=5.154299654066563
+[timing] sample=2 block_step=8 block_time=5.3272s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=8 block_time=5.3196s tail_wait=0.0077s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.154299654066563 pref=5.319561995565891 block=5.319561995565891
+Generating...:  55%|█████▍    | 18/33 [01:53<01:29,  5.98s/it]====================
+answer:  Tommy sells 43 brownies at $3 per slice, so he earns 43 * $3 = $<<43*3=129>>129 from the brownies.
+Tommy sells 23 slices of cheesecake at $4 per slice, so he earns 23 * $4 = $<<23*4=92>>92 from the cheesecakes.
+Therefore, the total amount of money Tommy raises is $129 + $92 = $<<129+92=221>>221.
+Solution: 221
+nfe:  70
+avg nfe:  63.63157894736842
+====================
+
+====================
+answer:  The total cost of the five cell phones is $150 * 5 = $750.
+The interest for each cell phone is 2% of $150, which is $150 * 0.02 = $3.
+So, the total amount to be paid is $750 + $150 * 5 = $900.
+Since the amount is to be paid in 3 months, Shiela will pay $900 / 3 = $300 each month.
+
+The answer is $300.
+nfe:  70
+avg nfe:  63.63157894736842
+====================
+
+====================
+answer:  Marigolds: 12 pots * $2.74/pot = $33.88
+Petunias: 9 pots * $1.87/pot = $16.83
+Begonias: 17 pots * $2.12/pot = $36.04
+
+Total earnings: $33.88 + $16.83 + $36.04 = $86.75
+
+Rounding to the nearest dollar, Artie will make $87.
+
+#### 87
+nfe:  70
+avg nfe:  63.63157894736842
+====================
+
+====================
+answer:  The top level has a square footage of 16.
+Second level level = 16 / 2 = 8
+Third level level = 8 / 2 = 4
+Fourth level level = 4 / 2 = 2
+To find the average square footage, we add up the square footage of each level and divide by the number of levels.
+Average = (16 + 8 + 4 + 2) / 4 = 30 / 4 = 7.5
+The average square footage of a level is 7.5
+#### 7.5
+nfe:  70
+avg nfe:  63.63157894736842
+====================
+
+[timing] sample=0 block_step=9 block_time=6.2028s tail_wait=0.3278s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.949538920074701 pref=6.2027917224913836 block=6.2027917224913836
+[timing] sample=1 block_step=13 block_time=6.5257s tail_wait=0.0050s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=6.039561772719026 pref=6.525655061006546 block=6.525655061006546
+[timing] sample=2 block_step=8 block_time=6.1224s tail_wait=0.4083s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.039561772719026 pref=6.122363116592169 block=6.122363116592169
+[timing] sample=3 block_step=8 block_time=6.5306s tail_wait=0.0000s finished=False
+[timing] sample=3 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+Generating...:  58%|█████▊    | 19/33 [01:59<01:26,  6.15s/it]====================
+answer:  For the first 180 days, the puppy will eat 1 cup per day, so it will eat 180 cups.
+For the remaining 185 days, the puppy will eat 2 cups per day, so it will eat 370 cups.
+In total, the puppy will eat 180 + 370 = 550 cups in the first year.
+Since one bag contains 110 cups, Cecilia will need 550 / 110 = 5 bags of dog food.
+The calculated answer is 5
+nfe:  55
+avg nfe:  63.2
+====================
+
+====================
+answer:  If Sarah does 400 pounds of laundry, then David does 400/4 = <<400/4=100>>100 pounds of laundry.
+If Raymond does half as much laundry as Sarah, then Raymond does 400/2 = <<400/2=200>>200 pounds of laundry.
+The difference in the amount of laundry Raymond and David do is 200 - 100 = <<200-100=100>>100 pounds.
+Solution: 100
+nfe:  55
+avg nfe:  63.2
+====================
+
+====================
+answer:  If Vincent buys 18 flowers in packages of 3, he would need 18/3 = 6 packages, which would cost him 6 * $2.50 = $15.
+If Vincent buys 18 flowers in packages of 2, he would need 18/2 = 9 packages, which would cost him only 9 * $1 = $9.
+By buying in packages of 2, Vincent saves $15 - $9 = $6.
+Therefore, Vincent saves $6 by buying 18 flowers at the better price.
+#### 6
+nfe:  55
+avg nfe:  63.2
+====================
+
+====================
+answer:  The original cost of the grooming is $100. The groomer offers a 30% discount. 
+
+First, calculate the discount amount:
+\[ \text{Discount} = 30\% \times 100 = 0.30 \times 100 = 30 \]
+
+Next, subtract the discount from the original cost:
+\[ \text{Final Cost} = 100 - 30 = 70 \]
+
+So, the grooming costs $70 after the discount.
+
+\boxed{70}
+nfe:  55
+avg nfe:  63.2
+====================
+
+[timing] sample=0 block_step=12 block_time=5.4600s tail_wait=0.0051s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.050141729414463 pref=5.459955265745521 block=5.459955265745521
+[timing] sample=1 block_step=10 block_time=5.2948s tail_wait=0.1702s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.213625909760594 pref=5.294790236279368 block=5.294790236279368
+[timing] sample=2 block_step=8 block_time=5.4650s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=10 block_time=5.2948s tail_wait=0.1702s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=4.959259958937764 pref=5.294790236279368 block=5.294790236279368
+Generating...:  61%|██████    | 20/33 [02:05<01:17,  5.94s/it]====================
+answer:  Each girl got 1/6 * 24 = 4 liters of water.
+So, the two girls together got 2 * 4 = 8 liters of water.
+The boy got 6 liters of water.
+The total amount of water taken by the girls and the boy is 8 + 6 = 14 liters.
+Therefore, the amount of water left is 24 - 14 = 10 liters.
+#### 10
+nfe:  58
+avg nfe:  62.95238095238095
+====================
+
+====================
+answer:  First, calculate the total number of stickers Charlie had initially: 10 stickers.
+
+Next, add the stickers he bought: 21 stickers + 10 stickers = 31 stickers.
+
+Then, add the stickers he received for his birthday: 23 stickers + 31 stickers = 54 stickers.
+
+Subtract the stickers he gave to his sister: 54 stickers - 9 stickers = 45 stickers.
+
+Subtract the stickers he used to decorate a greeting card: 45 stickers - 28 stickers = 7 stickers.
+
+#### 7
+nfe:  58
+avg nfe:  62.95238095238095
+====================
+
+====================
+answer:  Grace weighs 125 pounds. Alex weighs 2 pounds less than 4 times what Grace weighs. 
+
+First, calculate Alex's weight:
+4 times Grace's weight = 4 * 125 = 500 pounds
+Alex's weight = 500 - 2 = 498 pounds
+
+Now, find their combined weight:
+Combined weight = Grace's weight + Alex's weight
+Combined weight = 125 pounds + 498 pounds = 623 pounds
+
+So, their combined weight is 623 pounds.
+nfe:  58
+avg nfe:  62.95238095238095
+====================
+
+====================
+answer:  First, find the total number of roses on all the rose bushes:
+\[ 3 \text{ rose bushes} \times 25 \text{ roses per bush} = 75 \text{ roses} \]
+
+Next, find the total number of thorns on all the roses:
+\[ 75 \text{ roses} \times 8 \text{ thorns per rose} = 600 \text{ thorns} \]
+
+So, the total number of thorns is:
+\[ \boxed{600 \text{ thorns}} \]
+nfe:  58
+avg nfe:  62.95238095238095
+====================
+
+[timing] sample=0 block_step=7 block_time=5.2959s tail_wait=0.7204s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.130654340609908 pref=5.295871352776885 block=5.295871352776885
+[timing] sample=1 block_step=8 block_time=6.0163s tail_wait=0.0000s finished=False
+[timing] sample=1 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=2 block_step=10 block_time=6.0114s tail_wait=0.0049s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.687175769358873 pref=6.011402664706111 block=6.011402664706111
+[timing] sample=3 block_step=8 block_time=5.8547s tail_wait=0.1616s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.687175769358873 pref=5.854709366336465 block=5.854709366336465
+Generating...:  64%|██████▎   | 21/33 [02:11<01:11,  5.97s/it]====================
+answer:  Let's denote the number of games lost as \( L \). According to the problem, the team won 8 more games than they lost, so the number of games won is \( L + 8 \).
+
+The total number of games played is 22, so we can write the equation:
+\[ L + (L + 8) = 22 \]
+\[ 2L + 8 = 22 \]
+\[ 2L = 14 \]
+\[ L = 7 \]
+
+So, the team won \( 15 \) games.
+nfe:  62
+avg nfe:  62.90909090909091
+====================
+
+====================
+answer:  Gene has been vacationing for 34 - 23 = 11 years.
+He goes on 4 vacations each year, so in 11 years, he has gone on 11 * 4 = 44 vacations.
+Since each vacation is its own quilt block, he has 44 quilt blocks in total.
+#### 44
+nfe:  62
+avg nfe:  62.90909090909091
+====================
+
+====================
+answer:  The first time the alarm went off, it rang 4 times.
+The second time it went off, it rang for three times as long as the first time, so it rang 3*4 = 12 times.
+The third time it went off, it rang for half as long as the second time, so it rang 12/2 = 6 times.
+In total, the alarm rang 4 + 12 + 6 = 22 times.
+#### 22
+nfe:  62
+avg nfe:  62.90909090909091
+====================
+
+====================
+answer:  First, calculate the salary increase for the first year: $600 * 10% = $600 * 0.10 = $60
+Next, calculate the salary increase for the second year: $600 * 10% = $600 * 0.10 = $60
+Finally, calculate the salary increase for the third year: $600 * 10% = $600 * 0.10 = $60
+Sylvie's annual salary after three more years of service will be $60.
+nfe:  62
+avg nfe:  62.90909090909091
+====================
+
+[timing] sample=0 block_step=11 block_time=5.8170s tail_wait=0.1602s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.495222430676222 pref=5.817004786804318 block=5.817004786804318
+[timing] sample=1 block_step=8 block_time=4.0161s tail_wait=1.9612s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=3.68810261040926 pref=4.016080128028989 block=4.016080128028989
+[timing] sample=2 block_step=10 block_time=5.2227s tail_wait=0.7545s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.143799029290676 pref=5.222703715786338 block=5.222703715786338
+[timing] sample=3 block_step=13 block_time=5.9727s tail_wait=0.0045s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.495222430676222 pref=5.972738392651081 block=5.972738392651081
+Generating...:  67%|██████▋   | 22/33 [02:17<01:05,  5.97s/it]====================
+answer:  Let \( H \) be the number of copies sold by Harald. Then, Marilyn sold \( 10H \) copies.
+
+The total number of copies sold by both is given by:
+\[ H + 10H = 88,000 \]
+\[ 11H = 88,000 \]
+\[ H = \frac{88,000}{11} \]
+\[ H = 8,000 \]
+
+So, Harald sold \(\boxed{8000}\) copies of his record.
+nfe:  56
+avg nfe:  62.608695652173914
+====================
+
+====================
+answer:  Christina invited 16 friends, but 1/4 of them don't show up. So, 16 * (1/4) = 4 friends don't show up.
+
+Therefore, 16 - 4 = 12 friends actually show up.
+
+Christina needs 0.75 gift bags per invited guest, so she needs 12 * 0.75 = 9 gift bags.
+
+Each gift bag costs $2, so she will spend 9 * $2 = $18 on gift bags.
+
+Christina will spend $18.
+nfe:  56
+avg nfe:  62.608695652173914
+====================
+
+====================
+answer:  Each adult dinosaur will eat 10 lbs of potato salad, so 20 adults will eat 20 * 10 = 200 lbs.
+Each child will eat half as much as an adult, so 5 children will eat 5 * (10/2) = 25 lbs.
+In total, the adults and children will eat 200 + 25 = 225 lbs of potato salad.
+Therefore, Ted needs to bring 225 lbs of potato salad to the picnic to have enough to feed everyone.
+#### 225
+nfe:  56
+avg nfe:  62.608695652173914
+====================
+
+====================
+answer:  Cindy has 4 pets.
+Marcia has 2 more pets than Cindy, so Marcia has 4 + 2 = 6 pets.
+Jan has three times the number of pets as Marcia, so Jan has 3 * 6 = 18 pets.
+The total number of pets the three have is 4 + 6 + 18 = 28 pets.
+#### 28
+nfe:  56
+avg nfe:  62.608695652173914
+====================
+
+[timing] sample=0 block_step=10 block_time=5.5071s tail_wait=0.0066s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.189423095434904 pref=5.507131051272154 block=5.507131051272154
+[timing] sample=1 block_step=10 block_time=5.5071s tail_wait=0.0066s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.189423095434904 pref=5.507131051272154 block=5.507131051272154
+[timing] sample=2 block_step=8 block_time=5.3504s tail_wait=0.1634s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.350388564169407 pref=5.350388564169407 block=5.350388564169407
+[timing] sample=3 block_step=8 block_time=4.5371s tail_wait=0.9766s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=4.208023665472865 pref=4.537113908678293 block=4.537113908678293
+Generating...:  70%|██████▉   | 23/33 [02:22<00:58,  5.84s/it]====================
+answer:  If James is 10 and is 1 year younger than Corey, then Corey is 10 + 1 = <<10+1=11>>11 years old.
+Since Amy is 2 years younger than Corey, then Amy is 11 - 2 = <<11-2=9>>9 years old.
+Since Amy is 5 years older than Jackson, then Jackson is 9 - 5 = <<9-5=4>>4 years old.
+Therefore, Jackson is 4 years old.
+#### 4
+nfe:  55
+avg nfe:  62.291666666666664
+====================
+
+====================
+answer:  If Lee runs the 400-meter hurdles in 38 seconds, and he used to run it two seconds faster than Gerald, then Gerald used to run it in 38 + 2 = 40 seconds.
+If Gerald's diet improved his speed by 10%, then he can now run the 400-meter hurdles in 40 * 1.10 = 44 seconds.
+Therefore, Gerald, with his improved diet, can run the 400-meter hurdles in 44 seconds.
+#### 44
+The answer is: 44
+nfe:  55
+avg nfe:  62.291666666666664
+====================
+
+====================
+answer:  Since there are two cats for every dog, the number of cats is 2*60 = 120.
+The combined number of dogs and cats is 60+120 = 180.
+The number of rabbits is twelve less than the combined number of dogs and cats, meaning there are 180-12 = 168 rabbits.
+The total number of pets in the neighborhood is 60+120+168 = <<60+120+168=348>>348#### 348
+nfe:  55
+avg nfe:  62.291666666666664
+====================
+
+====================
+answer:  There are 80 boys because 200 x (2/5) = <<200*(2/5)=80>>80
+There are 120 girls because 200 - 80 = <<200-80=120>>120
+80 girls are in the girl scout because 120 x (2/3) = <<120*(2/3)=80>>80
+40 are not in the girl scout because 120 - 80 = 40
+#### 40
+nfe:  55
+avg nfe:  62.291666666666664
+====================
+
+[timing] sample=0 block_step=8 block_time=5.0611s tail_wait=0.1686s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=4.897411271929741 pref=5.061063643544912 block=5.061063643544912
+[timing] sample=1 block_step=10 block_time=5.2214s tail_wait=0.0082s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=4.897411271929741 pref=5.221430568024516 block=5.221430568024516
+[timing] sample=2 block_step=8 block_time=5.2296s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=8 block_time=5.2296s tail_wait=0.0000s finished=False
+[timing] sample=3 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+Generating...:  73%|███████▎  | 24/33 [02:28<00:50,  5.66s/it]====================
+answer:  Harry slept 9 hours last night. James slept 2/3 of what Harry slept. 
+
+To find out how many hours James slept, we calculate 2/3 of Harry's sleep:
+\[ \frac{2}{3} \times 9 = 6 \text{ hours} \]
+
+Now, to find out how many more hours Harry slept than James, we subtract James's sleep from Harry's sleep:
+\[ 9 - 6 = 3 \text{ hours} \]
+
+So, Harry slept 3 more hours than James.
+
+#### 3
+nfe:  69
+avg nfe:  62.56
+====================
+
+====================
+answer:  When Freda cooks the tomatoes into sauce, they lose half their volume. Therefore, the volume of the sauce is twice the volume of the original tomatoes.
+
+Given that the volume of the sauce is 32 ounces, the original volume of the tomatoes must be 32 / 2 = 16 ounces.
+
+Each 16-ounce can of tomatoes contains 3 tomatoes. Therefore, Freda used 16 ounces / 16 ounces per can = 1 can of tomatoes.
+
+So, Freda used 1 can of tomatoes, which contains a total of 3 tomatoes.
+nfe:  69
+avg nfe:  62.56
+====================
+
+====================
+answer:  There were originally 30 cars on the motorway.
+5 cars took an exit, so there were 30 - 5 = 25 cars left in the traffic jam.
+In the first 15 minutes, some cars drove through, and in the remaining 15 minutes, 20 more cars drove through.
+So, the number of cars that drove through in the first 15 minutes must be 25 - 20 = 5 cars.
+Therefore, 5 cars drove through the traffic jam in the first 15 minutes.
+Final answer: 5
+nfe:  69
+avg nfe:  62.56
+====================
+
+====================
+answer:  Mary already has 2 potted plants on each of the 40 window ledges, so she has a total of 2 x 40 = 80 potted plants.
+She received 18 new potted plants, so she now has 80 + 18 = 98 potted plants.
+She plans to give 1 potted plant from each ledge, so she will give away 40 potted plants.
+After giving away 40 potted plants, she will remain with 58 potted plants.
+So, the value is 58
+nfe:  69
+avg nfe:  62.56
+====================
+
+[timing] sample=0 block_step=8 block_time=6.4401s tail_wait=0.3196s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=6.350622279569507 pref=6.440068593248725 block=6.440068593248725
+[timing] sample=1 block_step=12 block_time=6.7547s tail_wait=0.0050s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=6.267913123592734 pref=6.754670569673181 block=6.754670569673181
+[timing] sample=2 block_step=11 block_time=6.6771s tail_wait=0.0826s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.350622279569507 pref=6.677073320373893 block=6.677073320373893
+[timing] sample=3 block_step=11 block_time=6.6771s tail_wait=0.0826s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.350622279569507 pref=6.677073320373893 block=6.677073320373893
+Generating...:  76%|███████▌  | 25/33 [02:34<00:47,  5.99s/it]====================
+answer:  The first friend pressed the doorbell 20 times.
+The second friend pressed the doorbell 1/4 times more than the first friend, so 20 + (1/4)*20 = 25 times.
+The third friend pressed the doorbell 10 times more than the fourth friend, so 60 + 10 = 70 times.
+The fourth friend pressed the doorbell 60 times.
+In total, the doorbell made 20+25+70+60 = 175 rings.
+#### 175
+nfe:  69
+avg nfe:  62.80769230769231
+====================
+
+====================
+answer:  Solo has to read a total of 4 + 20 + 7 + 8 = 39 pages.
+He has already read 15 pages, so he needs to read 39 - 15 = 24 more pages.
+He has 4 more days to complete his reading, so he needs to read an average of 24 / 4 = 6 pages per day.
+#### 6
+nfe:  69
+avg nfe:  62.80769230769231
+====================
+
+====================
+answer:  On weekdays, John drinks a glass of water with each meal, which totals to 4 glasses per day.
+Since there are 5 weekdays in a week, he drinks 4 glasses/day * 5 days = 20 glasses of water on weekdays.
+On weekends, he drinks a soda with dinner instead, so he does not drink any water on weekends.
+Since there are 2 weekends in a week, he drinks 0 glasses of water on weekends.
+In total, John drinks 20 glasses + 0 glasses = 20 glasses of water in a week.
+#### 20
+nfe:  69
+avg nfe:  62.80769230769231
+====================
+
+====================
+answer:  To determine how long it will take for the fog bank to cover the entire city, we need to divide the total distance of the city by the time it takes to cover 3 miles.
+
+The city is 42 miles across, and it takes 10 minutes to cover 3 miles.
+
+So, we divide the total distance by the time per 3 miles:
+
+42 miles / 3 miles * 10 minutes per 3 miles = 140 minutes
+
+Therefore, it will take the fog bank 140 minutes to cover the whole city.
+nfe:  69
+avg nfe:  62.80769230769231
+====================
+
+[timing] sample=0 block_step=8 block_time=6.9744s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=8 block_time=5.5057s tail_wait=1.4687s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.425531109794974 pref=5.425531109794974 block=5.50572014786303
+[timing] sample=2 block_step=7 block_time=6.8092s tail_wait=0.1652s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.809230720624328 pref=6.809230720624328 block=6.809230720624328
+[timing] sample=3 block_step=8 block_time=6.9689s tail_wait=0.0055s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.809230720624328 pref=6.968917770311236 block=6.968917770311236
+Generating...:  79%|███████▉  | 26/33 [02:41<00:44,  6.29s/it]====================
+answer:  Poppy places a quarter of the pieces, which is 1000 / 4 = 250 pieces.
+After Poppy places 250 pieces, there are 1000 - 250 = 750 pieces left.
+Her mom places then a third of the remaining pieces, which is 750 / 3 = 250 pieces.
+After her mom places 250 pieces, there are 750 - 250 = 500 pieces left to be placed.
+Solution: 500
+nfe:  70
+avg nfe:  63.074074074074076
+====================
+
+====================
+answer:  If Amir eats 5 cookies, then Cody eats 3 * 5 cookies = <<3*5=15>>15 cookies.
+Together, they eat 5 cookies + 15 cookies = <<5+15=20>>20 cookies.
+#### 20
+nfe:  70
+avg nfe:  63.074074074074076
+====================
+
+====================
+answer:  The outer dimensions of each box are 5-2*1 = 3 inches by 6-2*1 = 4 inches by 4-2*1 = 2 inches
+So the inner dimensions are 3*4*2 = <<3*4*2=24>>24 cubic inches
+So the inner volume of each box is 24 cubic inches
+Since there are 3 boxes, the total inner volume of all 3 boxes is 24 * 3 = <<24*3=72>>72 cubic inches.
+The answer is 72
+nfe:  70
+avg nfe:  63.074074074074076
+====================
+
+====================
+answer:  On Monday and Tuesday, Frankie watched 2 hours of TV. On Thursday, he watched 1 hour and 30 minutes, which is 1.5 hours. On Friday, he watched 2 hours. In total, he watched 2 + 1.5 + 2 = 6 hours of TV on those days. Since he watched 7 hours of TV in total, he watched 7 - 6 = 1 hour on Wednesday. Since each episode is 30 minutes long, he watched 1 / 30 = 2 episodes on Wednesday.
+The answer is 2.
+nfe:  70
+avg nfe:  63.074074074074076
+====================
+
+[timing] sample=0 block_step=10 block_time=6.6897s tail_wait=0.2438s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=6.448001053184271 pref=6.689698914065957 block=6.689698914065957
+[timing] sample=1 block_step=3 block_time=3.3323s tail_wait=3.6012s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=3.3323074467480183 pref=3.3323074467480183 block=3.3323074467480183
+[timing] sample=2 block_step=10 block_time=6.6897s tail_wait=0.2438s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.448001053184271 pref=6.689698914065957 block=6.689698914065957
+[timing] sample=3 block_step=13 block_time=6.9296s tail_wait=0.0039s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.529356189072132 pref=6.92956480756402 block=6.92956480756402
+Generating...:  82%|████████▏ | 27/33 [02:48<00:38,  6.48s/it]====================
+answer:  Let x be the number of cookies Henry baked last year.
+
+He wanted to make twice as many as he did last year, so he made 2x cookies.
+
+He baked 15 more cookies than he meant to, so he made 2x + 15 cookies.
+
+He dropped 5 cookies, so he has 2x + 15 - 5 = 110 cookies left.
+
+Solving for x, we get 2x = 100, so x = 50.
+
+Therefore, Henry baked 50 cookies last year.
+nfe:  72
+avg nfe:  63.392857142857146
+====================
+
+====================
+answer:  The cost of 10 gallons of gas at $3.00 per gallon is 10*3 = $<<10*3=30>>30.00
+The cashback is $0.20 per gallon for 10 gallons so that's 10*0.20 = $<<10*0.20=2.00>>2.00
+The total cost after the cashback is 30-2 = $<<30-2=28.00>>28.00
+#### 28Answer achieved: 28
+nfe:  72
+avg nfe:  63.392857142857146
+====================
+
+====================
+answer:  Beatrice ate 2 roll-ups wide x 24 roll-ups long = <<2*24=48>>48 roll-ups.
+Marcelo ate 3 roll-ups wide x 14 roll-ups long = <<3*14=42>>42 roll-ups.
+Together, they ate 48 + 42 = <<48+42=90>>90 roll-ups.
+On average, they ate 90 roll-ups / 2 people = <<90/2=45>>45 roll-ups each.
+#### 45
+nfe:  72
+avg nfe:  63.392857142857146
+====================
+
+====================
+answer:  Julia rowed 20 feet in 16 seconds because 64 / 16 = <<64/16=4>>4
+She rowed 20 feet 8 times because 4 x 2 = <<4*2=8>>8
+She rowed 10 feet 16 times because 8 x 2 = <<8*2=16>>16
+The boat took on 32 liters of water because 16 x 2 = <<16*2=32>>32
+#### 32
+nfe:  72
+avg nfe:  63.392857142857146
+====================
+
+[timing] sample=0 block_step=8 block_time=6.9251s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=13 block_time=6.9203s tail_wait=0.0049s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=6.437857003882527 pref=6.920272592455149 block=6.920272592455149
+[timing] sample=2 block_step=9 block_time=6.6074s tail_wait=0.3178s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.607367925345898 pref=6.607367925345898 block=6.607367925345898
+[timing] sample=3 block_step=9 block_time=6.6074s tail_wait=0.3178s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.437857003882527 pref=6.607367925345898 block=6.607367925345898
+Generating...:  85%|████████▍ | 28/33 [02:55<00:33,  6.62s/it]====================
+answer:  Each teacher has 2 lessons per day, and the whiteboard is used in each lesson. Therefore, each teacher uses the whiteboard 2 times per day.
+
+Since there are 4 teachers, the total number of times the whiteboard is used in a day is:
+4 teachers * 2 times per teacher per day = 8 times per day.
+
+If the whiteboard is cleaned 3 times per lesson, the total number of times it is cleaned in a day is:
+8 times per day * 3 times per lesson = 24 times per day.
+
+#### 24
+nfe:  74
+avg nfe:  63.758620689655174
+====================
+
+====================
+answer:  Ryan plants 2 flowers a day. Over 15 days, he plants 2 * 15 =  <<2*15=30>>30 flowers.
+If 5 flowers did not grow, then the number of flowers that actually grew is 30 - 5 = <<30-5=25>>25 flowers.
+#### 25
+nfe:  74
+avg nfe:  63.758620689655174
+====================
+
+====================
+answer:  First, find out how many photographs Brittany's phone can hold. Since Jamal's phone can hold 6 times more photographs than Brittany's phone, Brittany's phone can hold 1800 / 6 = 300 photographs.
+
+Next, find out how many ducks can be seen in Jamal's photograph. Since the maximum number of photographs Brittany's phone can hold is 50 times more than the number of birds in Jamal's photograph, the number of birds in Jamal's photograph is 300 / 50 = 6 ducks.
+
+The answer is 6
+nfe:  74
+avg nfe:  63.758620689655174
+====================
+
+====================
+answer:  She bought 10 boards at $10 each so 10*10 = $100
+She bought 5 boards at $16 each so 5*16 = $80
+Her total cost was 100+80 = $180
+She sells each board for 50% more so 10+10*.5 = $15 each
+Her total sales is 15*10+15*5 = $225
+Her profit is 225-180=$45
+#### 45
+nfe:  74
+avg nfe:  63.758620689655174
+====================
+
+[timing] sample=0 block_step=8 block_time=7.1627s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=5 block_time=5.2636s tail_wait=1.8991s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.176266044378281 pref=5.263626819476485 block=5.263626819476485
+[timing] sample=2 block_step=10 block_time=7.1567s tail_wait=0.0060s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=6.9091508984565735 pref=7.156669335439801 block=7.156669335439801
+[timing] sample=3 block_step=8 block_time=7.1627s tail_wait=0.0000s finished=False
+[timing] sample=3 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+Generating...:  88%|████████▊ | 29/33 [03:02<00:27,  6.78s/it]====================
+answer:  The ratio of teaspoons of sugar to cups of water is 7:13.
+The total number of parts in the ratio is 7 + 13 = 20.
+Katy used a total of 120 teaspoons of sugar and cups of water.
+So, each part of the ratio represents 120 / 20 = 6 teaspoons.
+Since the ratio of teaspoons of sugar is 7 parts, the number of teaspoons of sugar used is 7 * 6 = 42 teaspoons.
+Therefore, Katy used 42 teaspoons of sugar in her coffee.
+nfe:  65
+avg nfe:  63.8
+====================
+
+====================
+answer:  John buys 2 pairs of shoes for each of his 3 children, so he buys a total of 2 * 3 = <<2*3=6>>6 pairs of shoes.
+Each pair of shoes costs $60, so the total cost is 6 * $60 = $<<6*60=360>>360.
+Therefore, John paid $360.
+nfe:  65
+avg nfe:  63.8
+====================
+
+====================
+answer:  On the first day, there were 2 containers with 5 vehicles each, so a total of 2 * 5 = 10 vehicles.
+On the second day, the total number of vehicles became 30, so there were an additional 30 - 10 = 20 vehicles.
+Since each container contains 5 vehicles, the number of containers imported on the second day is 20 / 5 = 4 containers.
+#### 4
+nfe:  65
+avg nfe:  63.8
+====================
+
+====================
+answer:  Four years ago, Adrien earned $40000.
+Four years later, Adrien earned $40000 + 40% of $40000 = $56000.
+Four years ago, Lylah earned $40000 - 30% of $40000 = $32000.
+Four years later, Lylah earned $32000 + 40% of $32000 = $44800.
+#### 96800
+nfe:  65
+avg nfe:  63.8
+====================
+
+[timing] sample=0 block_step=9 block_time=6.0097s tail_wait=0.3203s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.765438292175531 pref=6.0097043402493 block=6.0097043402493
+[timing] sample=1 block_step=8 block_time=4.5369s tail_wait=1.7932s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=4.199101936072111 pref=4.536866081878543 block=4.536866081878543
+[timing] sample=2 block_step=9 block_time=5.3956s tail_wait=0.9344s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.065675925463438 pref=5.395637549459934 block=5.395637549459934
+[timing] sample=3 block_step=13 block_time=6.3259s tail_wait=0.0041s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=6.240252548828721 pref=6.325903167948127 block=6.325903167948127
+Generating...:  91%|█████████ | 30/33 [03:09<00:19,  6.65s/it]====================
+answer:  Miguel uses 2 pads of paper a week, and each pad has 30 sheets. Therefore, he uses:
+
+2 pads/week * 30 sheets/pad = 60 sheets/week
+
+To find out how many sheets he uses in a month, we need to multiply the weekly usage by the number of weeks in a month. Assuming a month has approximately 4 weeks, we get:
+
+60 sheets/week * 4 weeks/month = 240 sheets/month
+
+So, Miguel uses 240 sheets of paper every month.
+
+#### 240
+nfe:  60
+avg nfe:  63.67741935483871
+====================
+
+====================
+answer:  Morisette brought 5 apples and 8 oranges, so she has a total of 5 + 8 = 13 fruits.
+Kael brought twice the amount of apples as Morisette, so he brought 2 * 5 = 10 apples.
+He also brought half the number of oranges as Morisette, so he brought 8 / 2 = 4 oranges.
+Therefore, Kael has a total of 10 + 4 = 14 fruits.
+Together, they have 13 + 14 = 27 fruits in total.
+nfe:  60
+avg nfe:  63.67741935483871
+====================
+
+====================
+answer:  Sadie slept 8 hours on Monday.
+On Tuesday and Wednesday, she slept 2 hours less each day, so she slept 8 - 2 - 2 = 4 hours each day.
+For the rest of the week, she slept 1 hour more than those two days, so she slept 4 + 1 = 5 hours each day.
+In total, sheie slept 8 + 4 + 4 + 5 + 5 + 5 + 5 + 5 = 36 hours in the week.
+#### 36The final result is 36
+nfe:  60
+avg nfe:  63.67741935483871
+====================
+
+====================
+answer:  Rosie runs 10 miles per hour for 3 hours, so she runs 10 * 3 = 30 miles in the first 3 hours.
+After 3 hours, she runs 5 miles per hour for the remaining 7 - 3 = 4 hours.
+So, she runs 5 * 4 = 20 miles in the remaining 4 hours.
+In total, Rosie runs 30 + 20 = 50 miles in 7 hours.
+Therefore, Rosie can run 50 miles in 7 hours.
+#### 50
+nfe:  60
+avg nfe:  63.67741935483871
+====================
+
+[timing] sample=0 block_step=8 block_time=6.1304s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=8 block_time=5.8038s tail_wait=0.3266s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.803772343322635 pref=5.803772343322635 block=5.803772343322635
+[timing] sample=2 block_step=8 block_time=6.1304s tail_wait=0.0000s finished=False
+[timing] sample=2 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=3 block_step=7 block_time=5.7219s tail_wait=0.4085s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.721871739253402 pref=5.721871739253402 block=5.721871739253402
+Generating...:  94%|█████████▍| 31/33 [03:15<00:12,  6.49s/it]====================
+answer:  First, determine how many letters Jennie stamps: 60 letters / 3 = <<60/3=20>>20 letters
+
+Next, subtract the number of letters she stamps from the total number of letters needing stamps: 60 letters - 20 letters = <<60-20=40>>40 letters
+
+Finally, subtract the number of letters she already stamped from the current number of letters in the already-stamped pile: 30 letters - 20 letters = <<30-20=10>>10 letters
+
+#### 10
+nfe:  59
+avg nfe:  63.53125
+====================
+
+====================
+answer:  Let's denote the number of spoons in the package that Julia bought as \( x \).
+
+Julia's husband gave her 5 spoons, and she used 3 spoons to sample the stew. After using these spoons, she had 12 spoons left. Therefore, we can set up the following equation:
+
+\[ x + 5 - 3 = 12 \]
+
+Simplifying the equation:
+
+\[ x + 2 = 12 \]
+
+\[ x = 10 \]
+
+So, the package of spoons that Julia bought contained 10 spoons.
+nfe:  59
+avg nfe:  63.53125
+====================
+
+====================
+answer:  Dylan bought 38 chicken sausages. He also bought 6 more than chicken sausages, which means he bought 38 + 6 = 44 fish sausages.
+
+To find the total number of sausages, we add the number of chicken sausages and the number of fish sausages:
+
+38 + 44 = 82
+
+Therefore, Dylan bought a total of 82 sausages.
+nfe:  59
+avg nfe:  63.53125
+====================
+
+====================
+answer:  Lily made 50 friends. Amy made 20 more friends than Lily, so Amy made 50 + 20 = 70 friends.
+
+Together, Lily and Amy have 50 + 70 = 120 friends.
+
+#### 120
+nfe:  59
+avg nfe:  63.53125
+====================
+
+[timing] sample=0 block_step=8 block_time=5.7550s tail_wait=0.0000s finished=False
+[timing] sample=0 finished=False reason=no_eos_or_stop seen=None pref=None block=None
+[timing] sample=1 block_step=9 block_time=5.7499s tail_wait=0.0051s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.507273763418198 pref=5.749903380870819 block=5.749903380870819
+[timing] sample=2 block_step=5 block_time=4.1448s tail_wait=1.6103s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=4.063684407621622 pref=4.144787164404988 block=4.144787164404988
+[timing] sample=3 block_step=5 block_time=3.1056s tail_wait=2.6495s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=3.105573408305645 pref=3.105573408305645 block=3.105573408305645
+Generating...:  97%|█████████▋| 32/33 [03:21<00:06,  6.27s/it]====================
+answer:  Each watermelon costs 3 * 15 = 45.
+Each orange costs 45 - 5 = 40.
+Dillon will spend 4 * 45 = 180 on watermelons.
+He will spend 20 * 15 = 300 on peppers.
+He will spend 10 * 40 = 400 on oranges.
+The total amount of money he will spend is 180 + 300 + 400 = 880.
+The answer is 880
+nfe:  60
+avg nfe:  63.42424242424242
+====================
+
+====================
+answer:  The hospital sees 500 patients a day, so they see 500/60 = 10 hours of patient visits per day.
+The hospital charges $200 per hour, so they make 10 * $200 = $2000 per day.
+The doctors charge $150 per hour, so they pay 10 * $150 = $1500 per day.
+The hospital's profit is $2000 - $1500 = $500 per day.
+Solution: 500
+nfe:  60
+avg nfe:  63.42424242424242
+====================
+
+====================
+answer:  First, we need to determine how many elves quit after children vomit on them. A third of the 60 elves quit:
+
+\[ \frac{1}{3} \times 60 = 20 \]
+
+So, 20 elves quit, leaving:
+
+\[ 60 - 20 = 40 \]
+
+Next, 10 of the remaining elves quit after kids kick their shins:
+
+\[ 40 - 10 = 30 \]
+
+Therefore, the final number of elves left is 30.
+nfe:  60
+avg nfe:  63.42424242424242
+====================
+
+====================
+answer:  To find Joseph's total expenditure for May and June, we need to add his expenditures for each month.
+
+Joseph's expenditure in May was $500.
+In June, his expenditure was $60 less than in May, so his expenditure in June was:
+
+$500 - $60 = $440
+
+Now, we add the expenditures for May and June to find the total expenditure:
+
+$500 + $440 = $940
+
+Therefore, Joseph's total expenditure for May and June was:
+
+$940.
+nfe:  60
+avg nfe:  63.42424242424242
+====================
+
+[timing] sample=0 block_step=10 block_time=5.9746s tail_wait=0.0051s finished=True
+[timing] sample=0 finished=True reason=block_committed seen=5.814764691516757 pref=5.974594935774803 block=5.974594935774803
+[timing] sample=1 block_step=8 block_time=5.8148s tail_wait=0.1649s finished=True
+[timing] sample=1 finished=True reason=block_committed seen=5.650681974366307 pref=5.814764691516757 block=5.814764691516757
+[timing] sample=2 block_step=10 block_time=5.9746s tail_wait=0.0051s finished=True
+[timing] sample=2 finished=True reason=block_committed seen=5.650681974366307 pref=5.974594935774803 block=5.974594935774803
+[timing] sample=3 block_step=10 block_time=5.9746s tail_wait=0.0051s finished=True
+[timing] sample=3 finished=True reason=block_committed seen=5.650681974366307 pref=5.974594935774803 block=5.974594935774803
+Generating...: 100%|██████████| 33/33 [03:27<00:00,  6.19s/it]Generating...: 100%|██████████| 33/33 [03:27<00:00,  6.28s/it]
+Total number of tokens generated: 15755
+Total time taken: 207.18225932121277 seconds
+Tokens per second: 76.04415130615234
+Total NFE is 8372
+Total number of requests: 132
+Total time taken: 207.18 seconds
+Token throughput: 76.04 tokens/sec
+Request throughput: 0.64 req/sec
+Batch throughput: 0.16 batch/sec
+Token throughput per GPU: 76.04 tokens/sec/GPU
+2025-08-29:15:10:32,863 INFO     [lm_eval.loggers.evaluation_tracker:272] Output path not provided, skipping saving results aggregated
+llada_dist (model_path=GSAI-ML/LLaDA-8B-Instruct,gen_length=128,steps=8,block_length=16,use_cache=True,dual_cache=True,factor=1.0,show_speed=True), gen_kwargs: (None), limit: 0.1, num_fewshot: 1, batch_size: 4
+|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|
+|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|
+|gsm8k|      3|flexible-extract|     1|exact_match|↑  |0.7197|±  |0.0392|
+|     |       |strict-match    |     1|exact_match|↑  |0.4167|±  |0.0431|
+

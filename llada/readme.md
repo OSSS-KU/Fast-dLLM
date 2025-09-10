@@ -1,7 +1,7 @@
 # Fast-dLLM with LLaDA Inference
 
 ```bash
-python infer_llada_poisson.py \
+python inference.py \
   --model_path GSAI-ML/LLaDA-8B-Instruct \
   --split test \
   --limit 10 \

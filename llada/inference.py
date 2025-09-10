@@ -443,21 +443,14 @@ def main():
         tok.pad_token_id = tok.eos_token_id
     is_instruct = "instruct" in (args.model_path or "").lower()
 
-    if torch.cuda.is_available():
-        torch.cuda.reset_peak_memory_stats(device)
-
     data = load_gsm8k(args.split, args.limit, args.fewshot_k, args.seed)
     total_target = min(args.limit, len(data)) if args.limit and args.limit > 0 else len(data)
     
     os.makedirs(os.path.dirname(args.out_jsonl) or ".", exist_ok=True)
     fout = open(args.out_jsonl, "w", encoding="utf-8")
 
-    # baseline에만 있는 고유 코드 -> check 필요
-    # steps = args.steps if args.steps is not None else (args.gen_length // args.block_length)
     steps = args.steps
-    
     total_tokens = 0
-
     q_in: "queue.Queue[Dict[str, Any]]" = queue.Queue()
     stop_evt = threading.Event()
     prod = threading.Thread(
